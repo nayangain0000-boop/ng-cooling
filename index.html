@@ -1,48 +1,118 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N.G COOLING SOLUTION</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f9; color: #333; text-align: center; }
-        header { background-color: #0056b3; color: white; padding: 30px 20px; }
-        h1 { margin: 0; font-size: 2.5em; }
-        p { font-size: 1.2em; }
-        .container { padding: 20px; max-width: 600px; margin: auto; }
-        .services { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-top: 20px; text-align: left; }
-        .services h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; }
-        .services ul { list-style: none; padding: 0; }
-        .services li { padding: 10px 0; border-bottom: 1px solid #ddd; font-size: 1.1em; }
-        .services li:last-child { border-bottom: none; }
-        .btn-call { display: inline-block; background-color: #28a745; color: white; padding: 15px 30px; margin-top: 30px; font-size: 1.3em; text-decoration: none; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
-        footer { margin-top: 5px; padding: 20px; font-size: 0.9em; color: #777; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f6fc; color: #333; text-align: center; }
+        header { background-color: #0056b3; color: white; padding: 35px 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        header h1 { margin: 0; font-size: 2.3em; letter-spacing: 1px; }
+        header p { margin: 5px 0 0 0; font-size: 1.1em; opacity: 0.9; }
+        
+        .container { padding: 20px; max-width: 500px; margin: auto; }
+        
+        .booking-card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-top: 20px; text-align: left; }
+        .booking-card h2 { color: #0056b3; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; font-size: 1.4em; }
+        
+        .form-group { margin-bottom: 18px; }
+        label { display: block; margin-bottom: 6px; font-weight: bold; color: #555; }
+        input[type="text"], input[type="tel"], select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; box-sizing: border-box; }
+        
+        .price-box { background-color: #e8f5e9; border: 1px dashed #28a745; border-radius: 6px; padding: 15px; margin-top: 15px; text-align: center; }
+        .price-title { font-size: 1em; color: #555; margin: 0; }
+        .price-amount { font-size: 1.8em; font-weight: bold; color: #28a745; margin: 5px 0 0 0; }
+
+        .btn-submit { display: block; width: 100%; background-color: #25d366; color: white; padding: 15px; margin-top: 20px; font-size: 1.2em; text-decoration: none; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        
+        .btn-call { display: inline-block; background-color: #0056b3; color: white; padding: 12px 25px; margin-top: 25px; font-size: 1.1em; text-decoration: none; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        
+        footer { margin-top: 30px; padding: 20px; font-size: 0.85em; color: #777; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>N.G COOLING SOLUTION</h1>
-        <p>আপনার বিশ্বস্ত হোম অ্যাপ্লায়েন্স মেরামত ও সার্ভিসিং পার্টনার</p>
+        <p>Your Trusted Partner for Home Appliance Repair & Service</p>
     </header>
 
     <div class="container">
-        <div class="services">
-            <h2>আমাদের সেবাসমূহ:</h2>
-            <ul>
-                <li>❄️ এয়ার কন্ডিশনার (AC) সার্ভিসিং ও রিপেয়ার</li>
-                <li>🧺 ওয়াশিং মেশিন মেরামত</li>
-                <li>🍦 রেফ্রিজারেটর / ফ্রিজ সার্ভিসিং</li>
-            </ul>
+        <div class="booking-card">
+            <h2>Select Service & Book Online</h2>
+            
+            <div class="form-group">
+                <label for="custName">Your Name / আপনার নাম:</label>
+                <input type="text" id="custName" placeholder="Enter your name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="custPhone">Phone Number / মোবাইল নম্বর:</label>
+                <input type="tel" id="custPhone" placeholder="Enter 10 digit mobile number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="serviceSelect">Select Service / সার্ভিস বেছে নিন:</label>
+                <select id="serviceSelect" onchange="updatePrice()">
+                    <option value="jetpump" data-price="499" data-original="599">Jet Pump Deep Cleaning Foam Service</option>
+                    <option value="ac_repair" data-price="199">AC Repair Service</option>
+                    <option value="microwave" data-price="199">Microwave Repair</option>
+                    <option value="washing_machine" data-price="199">Washing Machine Repair</option>
+                    <option value="fridge" data-price="199">Fridge Repair</option>
+                    <option value="geyser" data-price="199">Geyser Repair</option>
+                </select>
+            </div>
+
+            <div class="price-box">
+                <p class="price-title">Service Charge / সার্ভিস চার্জ:</p>
+                <p class="price-amount" id="displayPrice">₹499 <span style="font-size:0.5em; font-weight:normal; color:#d32f2f; text-decoration:line-through; margin-left:10px;">₹599</span></p>
+            </div>
+
+            <button class="btn-submit" onclick="sendNotification()">✅ Confirm Booking via WhatsApp</button>
         </div>
 
-        <a href="tel:7439160014" class="btn-call">📞 কল করুন: 7439160014</a>
+        <a href="tel:7439160014" class="btn-call">📞 Direct Call: 7439160014</a>
     </div>
 
     <footer>
         <p>© 2026 N.G COOLING SOLUTION. All rights reserved.</p>
     </footer>
 
+    <script>
+        function updatePrice() {
+            var select = document.getElementById("serviceSelect");
+            var selectedOption = select.options[select.selectedIndex];
+            var price = selectedOption.getAttribute("data-price");
+            var originalPrice = selectedOption.getAttribute("data-original");
+            
+            var priceHTML = "₹" + price;
+            if (originalPrice) {
+                priceHTML += ' <span style="font-size:0.5em; font-weight:normal; color:#d32f2f; text-decoration:line-through; margin-left:10px;">₹' + originalPrice + '</span>';
+            }
+            document.getElementById("displayPrice").innerHTML = priceHTML;
+        }
+
+        function sendNotification() {
+            var name = document.getElementById("custName").value.trim();
+            var phone = document.getElementById("custPhone").value.trim();
+            var select = document.getElementById("serviceSelect");
+            var selectedServiceText = select.options[select.selectedIndex].text;
+            
+            if (name === "" || phone === "") {
+                alert("Please enter your Name and Phone Number.");
+                return;
+            }
+            
+            var myPhoneNumber = "917439160014"; 
+            var message = "New Booking Request from Website!\n\n" +
+                          "👤 Name: " + name + "\n" +
+                          "📱 Customer Phone: " + phone + "\n" +
+                          "🛠️ Selected Service: " + selectedServiceText;
+            
+            var encodedMessage = encodeURIComponent(message);
+            window.open("https://api.whatsapp.com/send?phone=" + myPhoneNumber + "&text=" + encodedMessage, '_blank');
+        }
+    </script>
+
 </body>
-  </html>
-  
+</html>
