@@ -17,7 +17,8 @@
         
         .form-group { margin-bottom: 18px; }
         label { display: block; margin-bottom: 6px; font-weight: bold; color: #555; }
-        input[type="text"], input[type="tel"], select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; box-sizing: border-box; }
+        input[type="text"], input[type="tel"], select, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; box-sizing: border-box; font-family: Arial, sans-serif; }
+        textarea { resize: vertical; height: 80px; }
         
         .price-box { background-color: #e8f5e9; border: 1px dashed #28a745; border-radius: 6px; padding: 15px; margin-top: 15px; text-align: center; }
         .price-title { font-size: 1em; color: #555; margin: 0; }
@@ -41,16 +42,31 @@
         <div class="booking-card">
             <h2>Select Service & Book Online</h2>
             
+            <!-- Customer Name -->
             <div class="form-group">
                 <label for="custName">Your Name / আপনার নাম:</label>
                 <input type="text" id="custName" placeholder="Enter your name" required>
             </div>
             
+            <!-- Customer Phone -->
             <div class="form-group">
                 <label for="custPhone">Phone Number / মোবাইল নম্বর:</label>
-                <input type="tel" id="custPhone" placeholder="Enter 10 digit mobile number" required>
+                <input type="tel" id="custPhone" placeholder="Enter mobile number" required>
             </div>
 
+            <!-- Customer Address -->
+            <div class="form-group">
+                <label for="custAddress">Full Address / আপনার ঠিকানা:</label>
+                <textarea id="custAddress" placeholder="Enter your full address" required></textarea>
+            </div>
+
+            <!-- Customer Pin Code -->
+            <div class="form-group">
+                <label for="custPin">Pin Code / পিন কোড:</label>
+                <input type="text" id="custPin" placeholder="Enter 6-digit pin code" required>
+            </div>
+
+            <!-- Service Selection -->
             <div class="form-group">
                 <label for="serviceSelect">Select Service / সার্ভিস বেছে নিন:</label>
                 <select id="serviceSelect" onchange="updatePrice()">
@@ -63,6 +79,7 @@
                 </select>
             </div>
 
+            <!-- Price Display -->
             <div class="price-box">
                 <p class="price-title">Service Charge / সার্ভিস চার্জ:</p>
                 <p class="price-amount" id="displayPrice">₹499 <span style="font-size:0.5em; font-weight:normal; color:#d32f2f; text-decoration:line-through; margin-left:10px;">₹599</span></p>
@@ -95,19 +112,25 @@
         function sendNotification() {
             var name = document.getElementById("custName").value.trim();
             var phone = document.getElementById("custPhone").value.trim();
+            var address = document.getElementById("custAddress").value.trim();
+            var pin = document.getElementById("custPin").value.trim();
             var select = document.getElementById("serviceSelect");
             var selectedServiceText = select.options[select.selectedIndex].text;
             
-            if (name === "" || phone === "") {
-                alert("Please enter your Name and Phone Number.");
+            if (name === "" || phone === "" || address === "" || pin === "") {
+                alert("Please fill in all fields / দয়া করে সব কটি ঘর পূরণ করুন।");
                 return;
             }
             
             var myPhoneNumber = "917439160014"; 
+            
+            // নতুন মেসেজ ফরম্যাট যেখানে ঠিকানা ও পিন কোড থাকবে
             var message = "New Booking Request from Website!\n\n" +
                           "👤 Name: " + name + "\n" +
-                          "📱 Customer Phone: " + phone + "\n" +
-                          "🛠️ Selected Service: " + selectedServiceText;
+                          "📱 Phone: " + phone + "\n" +
+                          "📍 Address: " + address + "\n" +
+                          "📌 Pin Code: " + pin + "\n" +
+                          "🛠️ Service: " + selectedServiceText;
             
             var encodedMessage = encodeURIComponent(message);
             window.open("https://api.whatsapp.com/send?phone=" + myPhoneNumber + "&text=" + encodedMessage, '_blank');
