@@ -82,6 +82,24 @@
             box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.15);
         }
         textarea { resize: vertical; height: 90px; }
+
+        .btn-location {
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: background 0.2s;
+        }
+        .btn-location:hover { background: #0369a1; }
         
         .price-box { 
             background: linear-gradient(135deg, #e0f2fe, #bae6fd); 
@@ -187,8 +205,11 @@
             </div>
 
             <div class="form-group">
-                <label for="custAddress">Full Address / আপনার সম্পূর্ণ ঠিকানা:</label>
-                <textarea id="custAddress" placeholder="Enter your full address (Street, Landmark, etc.)" required></textarea>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <label for="custAddress" style="margin-bottom:0;">Full Address / আপনার সম্পূর্ণ ঠিকানা:</label>
+                    <button type="button" class="btn-location" onclick="getLocation()">📍 Auto Location</button>
+                </div>
+                <textarea id="custAddress" placeholder="Click 'Auto Location' or type your full address here..." required></textarea>
             </div>
 
             <div class="form-group">
@@ -216,7 +237,7 @@
             <button class="btn-submit" onclick="sendNotification()">✅ Confirm Booking via WhatsApp</button>
         </div>
 
-        <!-- 50+ Customer Reviews Card -->
+        <!-- Customer Reviews Card -->
         <div class="card">
             <h2>💬 Customer Feedback & Reviews</h2>
             <p style="font-size:0.9em; color:#64748b; margin-top:0;">What our happy customers say about N.G Cooling Solution:</p>
@@ -281,6 +302,39 @@
         window.onload = function() {
             updatePrice();
         };
+
+        // Auto Location Fetcher Function using Geolocation and OpenStreetMap Nominatim API
+        function getLocation() {
+            if (navigator.geolocation) {
+                document.getElementById("custAddress").value = "Fetching your location... Please wait...";
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var lat = position.coords.latitude;
+                    var lon = position.coords.longitude;
+                    
+                    // Reverse geocoding using Nominatim API to get human readable address
+                    fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if(data && data.display_name) {
+                            document.getElementById("custAddress").value = data.display_name;
+                            if(data.address && data.address.postcode) {
+                                document.getElementById("custPin").value = data.address.postcode;
+                            }
+                        } else {
+                            document.getElementById("custAddress").value = "Lat: " + lat + ", Lon: " + lon;
+                        }
+                    })
+                    .catch(() => {
+                        document.getElementById("custAddress").value = "Lat: " + lat + ", Lon: " + lon;
+                    });
+                }, function(error) {
+                    alert("Unable to retrieve your location. Please type manually. Error: " + error.message);
+                    document.getElementById("custAddress").value = "";
+                }, { timeout: 10000, enableHighAccuracy: true });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
 
         function sendNotification() {
             var name = document.getElementById("custName").value.trim();
