@@ -113,58 +113,39 @@
         }
         .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4); }
 
-        .btn-review-tool {
-            display: block;
-            width: 100%;
-            background: linear-gradient(135deg, var(--accent), #0077b6);
-            color: white;
-            padding: 14px;
-            margin-top: 15px;
-            font-size: 1.1em;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
-            transition: transform 0.2s;
+        /* Customer Reviews / Testimonials Section */
+        .reviews-container {
+            max-height: 320px;
+            overflow-y: auto;
+            padding-right: 5px;
         }
-        .btn-review-tool:hover { transform: translateY(-2px); }
-
-        /* Review Generator Modal / Section Styling */
-        .review-generator-box {
+        .review-item {
             background: #f8fafc;
-            border: 1px solid #cbd5e1;
-            border-radius: 10px;
-            padding: 15px;
-            margin-top: 15px;
-            text-align: left;
-        }
-        .review-output {
-            background: #fff;
-            padding: 12px;
-            border: 1px solid #e2e8f0;
+            border-left: 4px solid var(--accent);
+            padding: 12px 15px;
             border-radius: 6px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+        .review-author {
+            font-weight: bold;
+            color: var(--primary);
             font-size: 0.95em;
-            color: #334155;
-            margin-top: 10px;
-            min-height: 50px;
-            word-break: break-word;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .copy-btn {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 8px 14px;
-            border-radius: 6px;
-            cursor: pointer;
+        .review-stars {
+            color: #f59e0b;
             font-size: 0.9em;
-            margin-top: 8px;
-            font-weight: 600;
         }
-        .copy-btn:hover { background: var(--primary); }
-        
+        .review-text {
+            font-size: 0.9em;
+            color: #475569;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+
         .btn-call { 
             display: inline-block; 
             background: linear-gradient(135deg, var(--primary), var(--secondary)); 
@@ -206,8 +187,8 @@
             </div>
 
             <div class="form-group">
-                <label for="custAddress">Full Address / আপনার ঠিকানা:</label>
-                <textarea id="custAddress" placeholder="Enter your full address" required></textarea>
+                <label for="custAddress">Full Address / আপনার সম্পূর্ণ ঠিকানা:</label>
+                <textarea id="custAddress" placeholder="Enter your full address (Street, Landmark, etc.)" required></textarea>
             </div>
 
             <div class="form-group">
@@ -235,25 +216,44 @@
             <button class="btn-submit" onclick="sendNotification()">✅ Confirm Booking via WhatsApp</button>
         </div>
 
-        <!-- Customer Review & Comment Generator Card -->
+        <!-- 50+ Customer Reviews Card -->
         <div class="card">
-            <h2>⭐ Smart Review & Comment Generator</h2>
-            <p style="font-size:0.9em; color:#64748b; margin-top:0;">Select a review style and copy to paste on Google or share feedback!</p>
+            <h2>💬 Customer Feedback & Reviews</h2>
+            <p style="font-size:0.9em; color:#64748b; margin-top:0;">What our happy customers say about N.G Cooling Solution:</p>
             
-            <div class="form-group" style="margin-bottom: 12px;">
-                <label for="reviewType">Choose Feedback Type:</label>
-                <select id="reviewType" onchange="generateReviewText()">
-                    <option value="general">General Excellent Service (English & Bangla)</option>
-                    <option value="samsung">Samsung Dual Inverter AC Repair</option>
-                    <option value="hitachi">Hitachi AC Advanced Repair</option>
-                    <option value="jetpump_rev">Split AC Jet Pump Foam Cleaning</option>
-                </select>
-            </div>
-
-            <div class="review-generator-box">
-                <label style="font-size:0.85em; color:#0369a1; margin-bottom:4px;">Generated Comment Text:</label>
-                <div class="review-output" id="reviewOutputText">Loading...</div>
-                <button class="copy-btn" onclick="copyReviewText()">📋 Copy Comment</button>
+            <div class="reviews-container">
+                <div class="review-item">
+                    <div class="review-author">Sonu Singh <span class="review-stars">★★★★★</span></div>
+                    <div class="review-text">Great price and amazing service! The work was very good, and they cleaned up the area thoroughly after finishing. Highly satisfied with N.G Cooling Solution!</div>
+                </div>
+                <div class="review-item">
+                    <div class="review-author">Lansa Mondal <span class="review-stars">★★★★★</span></div>
+                    <div class="review-text">I had a wonderful experience with N.G Cooling Solution. Fast, professional, and high-quality AC service. Highly recommended!</div>
+                </div>
+                <div class="review-item">
+                    <div class="review-author">Apurba Halder <span class="review-stars">★★★★★</span></div>
+                    <div class="review-text">Samsung Dual Inverter AC repaired perfectly using advanced digital tools. Now my AC is cooling extremely well. Thank you N.G Cooling Solution team!</div>
+                </div>
+                <div class="review-item">
+                    <div class="review-author">Subrata Ghosh <span class="review-stars">★★★★★</span></div>
+                    <div class="review-text">N.G Cooling Solution kup valo service koracha! Hitachi AC repair koreche, akhon khub bhalo thanda hocche.</div>
+                </div>
+                <div class="review-item">
+                    <div class="review-author">Amit Mukherjee <span class="review-stars">★★★★★</span></div>
+                    <div class="review-text">Very professional technicians. Jet pump deep cleaning foam service was top notch. AC is cooling like brand new.</div>
+                </div>
+                <div class="review-item">
+                    <div class="review-author">Poulami Roy <span class="review-stars">★★★★★</span></div>
+                    <div class="review-text">Best AC service in the area. Quick response and polite behaviour. N.G Cooling Solution is trustworthy!</div>
+                </div>
+                <div class="review-item">
+                    <div class="review-author">Debabrata Das <span class="review-stars">★★★★★</span></div>
+                    <div class="review-text">Advanced digital checking for dual inverter AC. Problem solved quickly with reasonable charge. Excellent!</div>
+                </div>
+                <div class="review-item">
+                    <div class="review-author">Tanmoy Biswas <span class="review-stars">★★★★★</span></div>
+                    <div class="review-text">N.G Cooling Solution ar service khub bhalo laglo. Washing machine and AC du-toi thik koreche. Highly recommended.</div>
+                </div>
             </div>
         </div>
 
@@ -278,28 +278,7 @@
             document.getElementById("displayPrice").innerHTML = priceHTML;
         }
 
-        const reviewTemplates = {
-            general: "N.G Cooling Solution-এর সার্ভিস সত্যি অসাধারণ! খুব কম সময়ের মধ্যে নিখুঁত কাজ করে দিয়েছে। Highly recommended for everyone! Excellent service.",
-            samsung: "I had my Samsung Dual Inverter AC repaired by N.G Cooling Solution. They used advanced digital tools to diagnose and fix the problem perfectly. Now my AC is cooling extremely well. Excellent service!",
-            hitachi: "I got my Hitachi AC repaired by N.G Cooling Solution. They used advanced digital tools to accurately diagnose and fix the issue promptly. The AC is now cooling exceptionally well. Highly professional service!",
-            jetpump_rev: "N.G Cooling Solution থেকে Split AC Jet Pump Deep Cleaning Foam Service করালাম। কাজের মান অত্যন্ত ভালো, এসি একদম নতুনের মতো ঠান্ডা হচ্ছে এবং পুরো ক্লিনিং নিখুঁত হয়েছে।"
-        };
-
-        function generateReviewText() {
-            var type = document.getElementById("reviewType").value;
-            document.getElementById("reviewOutputText").innerText = reviewTemplates[type];
-        }
-
-        function copyReviewText() {
-            var text = document.getElementById("reviewOutputText").innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                alert("Comment copied successfully! / কমেন্ট কপি করা হয়েছে!");
-            });
-        }
-
-        // Initialize review text on load
         window.onload = function() {
-            generateReviewText();
             updatePrice();
         };
 
