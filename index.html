@@ -6,7 +6,7 @@
     <title>N.G COOLING SOLUTION</title>
   <!-- PWA Manifest Link -->
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0056b3">
+<meta name="theme-color" content="#0d1b2a">
 
 <!-- Service Worker Script -->
 <script>
@@ -19,87 +19,242 @@
   }
 </script>
   <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f6fc; color: #333; text-align: center; }
-        header { background-color: #0056b3; color: white; padding: 35px 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        header h1 { margin: 0; font-size: 2.3em; letter-spacing: 1px; }
-        header p { margin: 5px 0 0 0; font-size: 1.1em; opacity: 0.9; }
-        
-        .container { padding: 20px; max-width: 500px; margin: auto; }
-        
-        .booking-card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-top: 20px; text-align: left; }
-        .booking-card h2 { color: #0056b3; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; font-size: 1.4em; }
-        
-        .form-group { margin-bottom: 18px; }
-        label { display: block; margin-bottom: 6px; font-weight: bold; color: #555; }
-        input[type="text"], input[type="tel"], select, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; box-sizing: border-box; font-family: Arial, sans-serif; }
-        textarea { resize: vertical; height: 80px; }
-        
-        .price-box { background-color: #e8f5e9; border: 1px dashed #28a745; border-radius: 6px; padding: 15px; margin-top: 15px; text-align: center; }
-        .price-title { font-size: 1em; color: #555; margin: 0; }
-        .price-amount { font-size: 1.8em; font-weight: bold; color: #28a745; margin: 5px 0 0 0; }
+        :root {
+            --primary: #0d1b2a;
+            --secondary: #1b263b;
+            --accent: #00b4d8;
+            --success: #2ec4b6;
+            --bg-light: #f0f4f8;
+            --text-dark: #2b2d42;
+        }
 
-        .btn-submit { display: block; width: 100%; background-color: #25d366; color: white; padding: 15px; margin-top: 20px; font-size: 1.2em; text-decoration: none; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%); 
+            color: var(--text-dark); 
+            text-align: center; 
+            min-height: 100vh;
+        }
+
+        header { 
+            background: linear-gradient(135deg, var(--primary), var(--secondary)); 
+            color: white; 
+            padding: 40px 20px; 
+            box-shadow: 0 6px 20px rgba(13, 27, 42, 0.2); 
+            border-bottom: 4px solid var(--accent);
+        }
+        header h1 { margin: 0; font-size: 2.5em; letter-spacing: 1.5px; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header p { margin: 8px 0 0 0; font-size: 1.15em; opacity: 0.9; color: #90e0ef; }
         
-        .btn-call { display: inline-block; background-color: #0056b3; color: white; padding: 12px 25px; margin-top: 25px; font-size: 1.1em; text-decoration: none; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .container { padding: 25px 15px; max-width: 550px; margin: auto; }
         
-        footer { margin-top: 30px; padding: 20px; font-size: 0.85em; color: #777; }
+        .card { 
+            background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(10px);
+            padding: 30px; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            margin-top: 20px; 
+            text-align: left; 
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+        .card h2 { color: var(--primary); margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; font-size: 1.4em; display: flex; align-items: center; gap: 10px; }
+        
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; color: #415a77; font-size: 0.95em; }
+        input[type="text"], input[type="tel"], select, textarea { 
+            width: 100%; 
+            padding: 14px; 
+            border: 2px solid #cbd5e1; 
+            border-radius: 8px; 
+            font-size: 1em; 
+            box-sizing: border-box; 
+            font-family: inherit; 
+            transition: all 0.3s ease;
+            background-color: #f8fafc;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--accent);
+            outline: none;
+            background-color: #fff;
+            box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.15);
+        }
+        textarea { resize: vertical; height: 90px; }
+        
+        .price-box { 
+            background: linear-gradient(135deg, #e0f2fe, #bae6fd); 
+            border: 2px dashed var(--accent); 
+            border-radius: 10px; 
+            padding: 18px; 
+            margin-top: 20px; 
+            text-align: center; 
+        }
+        .price-title { font-size: 1em; color: #0369a1; margin: 0; font-weight: 600; }
+        .price-amount { font-size: 2.2em; font-weight: 800; color: #0369a1; margin: 5px 0 0 0; }
+
+        .btn-submit { 
+            display: block; 
+            width: 100%; 
+            background: linear-gradient(135deg, #25d366, #1ebe5d); 
+            color: white; 
+            padding: 16px; 
+            margin-top: 25px; 
+            font-size: 1.2em; 
+            text-decoration: none; 
+            border-radius: 10px; 
+            font-weight: bold; 
+            border: none; 
+            cursor: pointer; 
+            text-align: center; 
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4); }
+
+        .btn-review-tool {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, var(--accent), #0077b6);
+            color: white;
+            padding: 14px;
+            margin-top: 15px;
+            font-size: 1.1em;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+            transition: transform 0.2s;
+        }
+        .btn-review-tool:hover { transform: translateY(-2px); }
+
+        /* Review Generator Modal / Section Styling */
+        .review-generator-box {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+            text-align: left;
+        }
+        .review-output {
+            background: #fff;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 0.95em;
+            color: #334155;
+            margin-top: 10px;
+            min-height: 50px;
+            word-break: break-word;
+        }
+        .copy-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+        .copy-btn:hover { background: var(--primary); }
+        
+        .btn-call { 
+            display: inline-block; 
+            background: linear-gradient(135deg, var(--primary), var(--secondary)); 
+            color: white; 
+            padding: 14px 30px; 
+            margin-top: 25px; 
+            font-size: 1.1em; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            box-shadow: 0 6px 15px rgba(13, 27, 42, 0.2); 
+            transition: transform 0.2s;
+        }
+        .btn-call:hover { transform: scale(1.05); }
+        
+        footer { margin-top: 30px; padding: 20px; font-size: 0.9em; color: #64748b; border-top: 1px solid #cbd5e1; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>N.G COOLING SOLUTION</h1>
-        <p>Your Trusted Partner for Home Appliance Repair & Service</p>
+        <p>Advanced Digital Home Appliance Repair & Service Center</p>
     </header>
 
     <div class="container">
-        <div class="booking-card">
-            <h2>Select Service & Book Online</h2>
+        <!-- Booking Card -->
+        <div class="card">
+            <h2>🛠️ Select Service & Book Online</h2>
             
-            <!-- Customer Name -->
             <div class="form-group">
                 <label for="custName">Your Name / আপনার নাম:</label>
                 <input type="text" id="custName" placeholder="Enter your name" required>
             </div>
             
-            <!-- Customer Phone -->
             <div class="form-group">
                 <label for="custPhone">Phone Number / মোবাইল নম্বর:</label>
                 <input type="tel" id="custPhone" placeholder="Enter mobile number" required>
             </div>
 
-            <!-- Customer Address -->
             <div class="form-group">
                 <label for="custAddress">Full Address / আপনার ঠিকানা:</label>
                 <textarea id="custAddress" placeholder="Enter your full address" required></textarea>
             </div>
 
-            <!-- Customer Pin Code -->
             <div class="form-group">
                 <label for="custPin">Pin Code / পিন কোড:</label>
                 <input type="text" id="custPin" placeholder="Enter 6-digit pin code" required>
             </div>
 
-            <!-- Service Selection -->
             <div class="form-group">
                 <label for="serviceSelect">Select Service / সার্ভিস বেছে নিন:</label>
                 <select id="serviceSelect" onchange="updatePrice()">
-                    <option value="jetpump" data-price="499" data-original="599">Jet Pump Deep Cleaning Foam Service</option>
-                    <option value="ac_repair" data-price="199">AC Repair Service</option>
+                    <option value="jetpump" data-price="499" data-original="699">Split AC Jet Pump Deep Cleaning Foam Service</option>
+                    <option value="ac_repair" data-price="199">AC Repair & Gas Check</option>
                     <option value="microwave" data-price="199">Microwave Repair</option>
                     <option value="washing_machine" data-price="199">Washing Machine Repair</option>
-                    <option value="fridge" data-price="199">Fridge Repair</option>
+                    <option value="fridge" data-price="199">Fridge Repair (Dual Inverter Specialist)</option>
                     <option value="geyser" data-price="199">Geyser Repair</option>
                 </select>
             </div>
 
-            <!-- Price Display -->
             <div class="price-box">
                 <p class="price-title">Service Charge / সার্ভিস চার্জ:</p>
-                <p class="price-amount" id="displayPrice">₹499 <span style="font-size:0.5em; font-weight:normal; color:#d32f2f; text-decoration:line-through; margin-left:10px;">₹599</span></p>
+                <p class="price-amount" id="displayPrice">₹499 <span style="font-size:0.5em; font-weight:normal; color:#dc2626; text-decoration:line-through; margin-left:10px;">₹699</span></p>
             </div>
 
             <button class="btn-submit" onclick="sendNotification()">✅ Confirm Booking via WhatsApp</button>
+        </div>
+
+        <!-- Customer Review & Comment Generator Card -->
+        <div class="card">
+            <h2>⭐ Smart Review & Comment Generator</h2>
+            <p style="font-size:0.9em; color:#64748b; margin-top:0;">Select a review style and copy to paste on Google or share feedback!</p>
+            
+            <div class="form-group" style="margin-bottom: 12px;">
+                <label for="reviewType">Choose Feedback Type:</label>
+                <select id="reviewType" onchange="generateReviewText()">
+                    <option value="general">General Excellent Service (English & Bangla)</option>
+                    <option value="samsung">Samsung Dual Inverter AC Repair</option>
+                    <option value="hitachi">Hitachi AC Advanced Repair</option>
+                    <option value="jetpump_rev">Split AC Jet Pump Foam Cleaning</option>
+                </select>
+            </div>
+
+            <div class="review-generator-box">
+                <label style="font-size:0.85em; color:#0369a1; margin-bottom:4px;">Generated Comment Text:</label>
+                <div class="review-output" id="reviewOutputText">Loading...</div>
+                <button class="copy-btn" onclick="copyReviewText()">📋 Copy Comment</button>
+            </div>
         </div>
 
         <a href="tel:7439160014" class="btn-call">📞 Direct Call: 7439160014</a>
@@ -118,10 +273,35 @@
             
             var priceHTML = "₹" + price;
             if (originalPrice) {
-                priceHTML += ' <span style="font-size:0.5em; font-weight:normal; color:#d32f2f; text-decoration:line-through; margin-left:10px;">₹' + originalPrice + '</span>';
+                priceHTML += ' <span style="font-size:0.5em; font-weight:normal; color:#dc2626; text-decoration:line-through; margin-left:10px;">₹' + originalPrice + '</span>';
             }
             document.getElementById("displayPrice").innerHTML = priceHTML;
         }
+
+        const reviewTemplates = {
+            general: "N.G Cooling Solution-এর সার্ভিস সত্যি অসাধারণ! খুব কম সময়ের মধ্যে নিখুঁত কাজ করে দিয়েছে। Highly recommended for everyone! Excellent service.",
+            samsung: "I had my Samsung Dual Inverter AC repaired by N.G Cooling Solution. They used advanced digital tools to diagnose and fix the problem perfectly. Now my AC is cooling extremely well. Excellent service!",
+            hitachi: "I got my Hitachi AC repaired by N.G Cooling Solution. They used advanced digital tools to accurately diagnose and fix the issue promptly. The AC is now cooling exceptionally well. Highly professional service!",
+            jetpump_rev: "N.G Cooling Solution থেকে Split AC Jet Pump Deep Cleaning Foam Service করালাম। কাজের মান অত্যন্ত ভালো, এসি একদম নতুনের মতো ঠান্ডা হচ্ছে এবং পুরো ক্লিনিং নিখুঁত হয়েছে।"
+        };
+
+        function generateReviewText() {
+            var type = document.getElementById("reviewType").value;
+            document.getElementById("reviewOutputText").innerText = reviewTemplates[type];
+        }
+
+        function copyReviewText() {
+            var text = document.getElementById("reviewOutputText").innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Comment copied successfully! / কমেন্ট কপি করা হয়েছে!");
+            });
+        }
+
+        // Initialize review text on load
+        window.onload = function() {
+            generateReviewText();
+            updatePrice();
+        };
 
         function sendNotification() {
             var name = document.getElementById("custName").value.trim();
@@ -138,8 +318,7 @@
             
             var myPhoneNumber = "917439160014"; 
             
-            // নতুন মেসেজ ফরম্যাট যেখানে ঠিকানা ও পিন কোড থাকবে
-            var message = "New Booking Request from Website!\n\n" +
+            var message = "New Booking Request from N.G Cooling Solution Website!\n\n" +
                           "👤 Name: " + name + "\n" +
                           "📱 Phone: " + phone + "\n" +
                           "📍 Address: " + address + "\n" +
