@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N.G COOLING SOLUTION</title>
-  <link rel="manifest" href="manifest.json">
+  <!-- PWA Manifest Link -->
+<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0d1b2a">
 
+<!-- Service Worker Script -->
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
@@ -39,32 +41,32 @@
         header { 
             background: linear-gradient(135deg, var(--primary), var(--secondary)); 
             color: white; 
-            padding: 40px 20px; 
+            padding: 35px 20px; 
             box-shadow: 0 6px 20px rgba(13, 27, 42, 0.2); 
             border-bottom: 4px solid var(--accent);
         }
-        header h1 { margin: 0; font-size: 2.5em; letter-spacing: 1.5px; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-        header p { margin: 8px 0 0 0; font-size: 1.15em; opacity: 0.9; color: #90e0ef; }
+        header h1 { margin: 0; font-size: 2.3em; letter-spacing: 1.5px; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header p { margin: 8px 0 0 0; font-size: 1.1em; opacity: 0.9; color: #90e0ef; }
         
         .container { padding: 25px 15px; max-width: 550px; margin: auto; }
         
         .card { 
             background: rgba(255, 255, 255, 0.95); 
             backdrop-filter: blur(10px);
-            padding: 30px; 
+            padding: 25px; 
             border-radius: 16px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
             margin-top: 20px; 
             text-align: left; 
             border: 1px solid rgba(255,255,255,0.8);
         }
-        .card h2 { color: var(--primary); margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; font-size: 1.4em; display: flex; align-items: center; gap: 10px; }
+        .card h2 { color: var(--primary); margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; font-size: 1.3em; display: flex; align-items: center; gap: 10px; }
         
-        .form-group { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 8px; font-weight: 600; color: #415a77; font-size: 0.95em; }
-        input[type="text"], input[type="tel"], select, textarea { 
+        .form-group { margin-bottom: 18px; }
+        label { display: block; margin-bottom: 6px; font-weight: 600; color: #415a77; font-size: 0.95em; }
+        input[type="text"], input[type="tel"], select, textarea, input[type="date"], input[type="time"] { 
             width: 100%; 
-            padding: 14px; 
+            padding: 12px; 
             border: 2px solid #cbd5e1; 
             border-radius: 8px; 
             font-size: 1em; 
@@ -79,22 +81,21 @@
             background-color: #fff;
             box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.15);
         }
-        textarea { resize: vertical; height: 90px; }
+        textarea { resize: vertical; height: 80px; }
 
         .btn-location {
             background: linear-gradient(135deg, #0284c7, #0369a1);
             color: white;
             border: none;
-            padding: 8px 12px;
+            padding: 6px 10px;
             border-radius: 6px;
             cursor: pointer;
-            font-size: 0.85em;
+            font-size: 0.8em;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: background 0.2s;
         }
         .btn-location:hover { background: #0369a1; }
         
@@ -102,21 +103,53 @@
             background: linear-gradient(135deg, #e0f2fe, #bae6fd); 
             border: 2px dashed var(--accent); 
             border-radius: 10px; 
-            padding: 18px; 
-            margin-top: 20px; 
+            padding: 15px; 
+            margin-top: 15px; 
             text-align: center; 
         }
-        .price-title { font-size: 1em; color: #0369a1; margin: 0; font-weight: 600; }
-        .price-amount { font-size: 2.2em; font-weight: 800; color: #0369a1; margin: 5px 0 0 0; }
+        .price-title { font-size: 0.95em; color: #0369a1; margin: 0; font-weight: 600; }
+        .price-amount { font-size: 2em; font-weight: 800; color: #0369a1; margin: 5px 0 0 0; }
+
+        .payment-options {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 10px;
+        }
+        .payment-option-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-weight: 600;
+            color: #334155;
+            font-size: 0.9em;
+        }
+        .payment-option-item:last-child { border-bottom: none; }
+
+        .upi-box {
+            background: #fef3c7;
+            border: 1px dashed #d97706;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 8px;
+            font-size: 0.85em;
+            color: #b45309;
+            display: none;
+            text-align: center;
+            font-weight: bold;
+        }
 
         .btn-submit { 
             display: block; 
             width: 100%; 
             background: linear-gradient(135deg, #25d366, #1ebe5d); 
             color: white; 
-            padding: 16px; 
-            margin-top: 25px; 
-            font-size: 1.2em; 
+            padding: 15px; 
+            margin-top: 20px; 
+            font-size: 1.15em; 
             text-decoration: none; 
             border-radius: 10px; 
             font-weight: bold; 
@@ -124,59 +157,49 @@
             cursor: pointer; 
             text-align: center; 
             box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s;
         }
-        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4); }
+        .btn-submit:hover { transform: translateY(-2px); }
 
-        /* Customer Reviews / Testimonials Section */
+        /* Customer Reviews Section */
         .reviews-container {
-            max-height: 320px;
+            max-height: 280px;
             overflow-y: auto;
             padding-right: 5px;
         }
         .review-item {
             background: #f8fafc;
             border-left: 4px solid var(--accent);
-            padding: 12px 15px;
+            padding: 10px 12px;
             border-radius: 6px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.03);
         }
         .review-author {
             font-weight: bold;
             color: var(--primary);
-            font-size: 0.95em;
+            font-size: 0.9em;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .review-stars {
-            color: #f59e0b;
-            font-size: 0.9em;
-        }
-        .review-text {
-            font-size: 0.9em;
-            color: #475569;
-            margin-top: 5px;
-            line-height: 1.4;
-        }
+        .review-stars { color: #f59e0b; font-size: 0.85em; }
+        .review-text { font-size: 0.85em; color: #475569; margin-top: 4px; line-height: 1.3; }
 
         .btn-call { 
             display: inline-block; 
             background: linear-gradient(135deg, var(--primary), var(--secondary)); 
             color: white; 
-            padding: 14px 30px; 
-            margin-top: 25px; 
-            font-size: 1.1em; 
+            padding: 12px 25px; 
+            margin-top: 20px; 
+            font-size: 1.05em; 
             text-decoration: none; 
             border-radius: 50px; 
             font-weight: bold; 
             box-shadow: 0 6px 15px rgba(13, 27, 42, 0.2); 
-            transition: transform 0.2s;
         }
-        .btn-call:hover { transform: scale(1.05); }
         
-        footer { margin-top: 30px; padding: 20px; font-size: 0.9em; color: #64748b; border-top: 1px solid #cbd5e1; }
+        footer { margin-top: 25px; padding: 15px; font-size: 0.85em; color: #64748b; border-top: 1px solid #cbd5e1; }
     </style>
 </head>
 <body>
@@ -187,8 +210,9 @@
     </header>
 
     <div class="container">
+        <!-- Booking Card -->
         <div class="card">
-            <h2>🛠️ Select Service & Book Online</h2>
+            <h2>🛠️ Select Service & Schedule</h2>
             
             <div class="form-group">
                 <label for="custName">Your Name / আপনার নাম:</label>
@@ -202,10 +226,10 @@
 
             <div class="form-group">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                    <label for="custAddress" style="margin-bottom:0;">Full Address / আপনার সম্পূর্ণ ঠিকানা:</label>
+                    <label for="custAddress" style="margin-bottom:0;">Full Address / আপনার ঠিকানা:</label>
                     <button type="button" class="btn-location" onclick="getLocation()">📍 Auto Location</button>
                 </div>
-                <textarea id="custAddress" placeholder="Click 'Auto Location' or type address manually..." required></textarea>
+                <textarea id="custAddress" placeholder="Click 'Auto Location' or type address..." required></textarea>
             </div>
 
             <div class="form-group">
@@ -216,31 +240,60 @@
             <div class="form-group">
                 <label for="serviceSelect">Select Service / সার্ভিস বেছে নিন:</label>
                 <select id="serviceSelect" onchange="updatePrice()">
-                    <option value="jetpump" data-price="499" data-original="699">Split AC Jet Pump Deep Cleaning Foam Service</option>
-                    <option value="ac_repair" data-price="199">AC Repair & Gas Check</option>
-                    <option value="microwave" data-price="199">Microwave Repair</option>
-                    <option value="washing_machine" data-price="199">Washing Machine Repair</option>
-                    <option value="fridge" data-price="199">Fridge Repair (Dual Inverter Specialist)</option>
-                    <option value="geyser" data-price="199">Geyser Repair</option>
+                    <option value="foam_jet" data-price="449" data-original="599">Foam-jet AC Service (Deep Cleaning) - ₹449</option>
+                    <option value="ac_repair" data-price="299" data-original="399">AC Repair & Check-up - ₹299</option>
+                    <option value="gas_refill" data-price="2800" data-original="3200">Gas Refill & Check-up - ₹2,800</option>
+                    <option value="ac_installation" data-price="1099" data-original="1299">AC Installation - ₹1,099</option>
+                    <option value="ac_uninstallation" data-price="699" data-original="899">AC Uninstallation - ₹699</option>
+                    <option value="washing_machine" data-price="199">Washing Machine Repair - ₹199</option>
+                    <option value="fridge" data-price="199">Fridge Repair (Dual Inverter) - ₹199</option>
                 </select>
             </div>
 
+            <div style="display: flex; gap: 10px;">
+                <div class="form-group" style="flex: 1;">
+                    <label for="serviceDate">Service Date / তারিখ:</label>
+                    <input type="date" id="serviceDate" required>
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label for="serviceTime">Time Slot / সময়:</label>
+                    <input type="time" id="serviceTime" required>
+                </div>
+            </div>
+
             <div class="price-box">
-                <p class="price-title">Service Charge / সার্ভিস চার্জ:</p>
-                <p class="price-amount" id="displayPrice">₹499 <span style="font-size:0.5em; font-weight:normal; color:#dc2626; text-decoration:line-through; margin-left:10px;">₹699</span></p>
+                <p class="price-title">Service Charge / মোট পেমেন্ট:</p>
+                <p class="price-amount" id="displayPrice">₹449 <span style="font-size:0.5em; font-weight:normal; color:#dc2626; text-decoration:line-through; margin-left:10px;">₹599</span></p>
+            </div>
+
+            <!-- Payment Method Section -->
+            <div class="form-group" style="margin-top: 15px;">
+                <label>💳 Select Payment Method / পেমেন্ট মাধ্যম:</label>
+                <div class="payment-options">
+                    <label class="payment-option-item">
+                        <input type="radio" name="payMethod" value="Cash After Service" checked onclick="toggleUpiBox(false)"> 💵 Cash After Service (Only Cash)
+                    </label>
+                    <label class="payment-option-item">
+                        <input type="radio" name="payMethod" value="Online Payment (UPI)" onclick="toggleUpiBox(true)"> 📱 Online Payment (UPI)
+                    </label>
+                    <div id="upiInfoBox" class="upi-box">
+                        📌 Pay via UPI ID: <strong style="color: #92400e;">8481003054@idfcfirst</strong>
+                    </div>
+                </div>
             </div>
 
             <button class="btn-submit" onclick="sendNotification()">✅ Confirm Booking via WhatsApp</button>
         </div>
 
+        <!-- Customer Reviews Card -->
         <div class="card">
             <h2>💬 Customer Feedback & Reviews</h2>
-            <p style="font-size:0.9em; color:#64748b; margin-top:0;">What our happy customers say about N.G Cooling Solution:</p>
+            <p style="font-size:0.85em; color:#64748b; margin-top:0;">50+ Happy Customers of N.G Cooling Solution:</p>
             
             <div class="reviews-container">
                 <div class="review-item">
                     <div class="review-author">Sonu Singh <span class="review-stars">★★★★★</span></div>
-                    <div class="review-text">Great price and amazing service! The work was very good, and they cleaned up the area thoroughly after finishing. Highly satisfied with N.G Cooling Solution!</div>
+                    <div class="review-text">Great price and amazing service! The work was very good, and they cleaned up the area thoroughly after finishing. Highly satisfied!</div>
                 </div>
                 <div class="review-item">
                     <div class="review-author">Lansa Mondal <span class="review-stars">★★★★★</span></div>
@@ -248,7 +301,7 @@
                 </div>
                 <div class="review-item">
                     <div class="review-author">Apurba Halder <span class="review-stars">★★★★★</span></div>
-                    <div class="review-text">Samsung Dual Inverter AC repaired perfectly using advanced digital tools. Now my AC is cooling extremely well. Thank you N.G Cooling Solution team!</div>
+                    <div class="review-text">Samsung Dual Inverter AC repaired perfectly using advanced digital tools. Now my AC is cooling extremely well. Thank you!</div>
                 </div>
                 <div class="review-item">
                     <div class="review-author">Subrata Ghosh <span class="review-stars">★★★★★</span></div>
@@ -256,19 +309,7 @@
                 </div>
                 <div class="review-item">
                     <div class="review-author">Amit Mukherjee <span class="review-stars">★★★★★</span></div>
-                    <div class="review-text">Very professional technicians. Jet pump deep cleaning foam service was top notch. AC is cooling like brand new.</div>
-                </div>
-                <div class="review-item">
-                    <div class="review-author">Poulami Roy <span class="review-stars">★★★★★</span></div>
-                    <div class="review-text">Best AC service in the area. Quick response and polite behaviour. N.G Cooling Solution is trustworthy!</div>
-                </div>
-                <div class="review-item">
-                    <div class="review-author">Debabrata Das <span class="review-stars">★★★★★</span></div>
-                    <div class="review-text">Advanced digital checking for dual inverter AC. Problem solved quickly with reasonable charge. Excellent!</div>
-                </div>
-                <div class="review-item">
-                    <div class="review-author">Tanmoy Biswas <span class="review-stars">★★★★★</span></div>
-                    <div class="review-text">N.G Cooling Solution ar service khub bhalo laglo. Washing machine and AC du-toi thik koreche. Highly recommended.</div>
+                    <div class="review-text">Very professional technicians. Foam-jet deep cleaning service was top notch. AC is cooling like brand new.</div>
                 </div>
             </div>
         </div>
@@ -281,6 +322,12 @@
     </footer>
 
     <script>
+        window.onload = function() {
+            var today = new Date().toISOString().split('T')[0];
+            document.getElementById("serviceDate").value = today;
+            updatePrice();
+        };
+
         function updatePrice() {
             var select = document.getElementById("serviceSelect");
             var selectedOption = select.options[select.selectedIndex];
@@ -294,11 +341,15 @@
             document.getElementById("displayPrice").innerHTML = priceHTML;
         }
 
-        window.onload = function() {
-            updatePrice();
-        };
+        function toggleUpiBox(show) {
+            var box = document.getElementById("upiInfoBox");
+            if(show) {
+                box.style.display = "block";
+            } else {
+                box.style.display = "none";
+            }
+        }
 
-        // Auto Location Function
         function getLocation() {
             if (navigator.geolocation) {
                 document.getElementById("custAddress").value = "Fetching your location... Please wait...";
@@ -335,11 +386,22 @@
             var phone = document.getElementById("custPhone").value.trim();
             var address = document.getElementById("custAddress").value.trim();
             var pin = document.getElementById("custPin").value.trim();
+            var date = document.getElementById("serviceDate").value;
+            var time = document.getElementById("serviceTime").value;
             var select = document.getElementById("serviceSelect");
             var selectedServiceText = select.options[select.selectedIndex].text;
             
-            if (name === "" || phone === "" || address === "" || pin === "") {
-                alert("Please fill in all fields / দয়া করে সব কটি ঘর পূরণ করুন।");
+            var payMethod = "Cash After Service (Only Cash)";
+            var radios = document.getElementsByName("payMethod");
+            for(var i = 0; i < radios.length; i++) {
+                if(radios[i].checked) {
+                    payMethod = radios[i].value;
+                    break;
+                }
+            }
+            
+            if (name === "" || phone === "" || address === "" || pin === "" || date === "" || time === "") {
+                alert("Please fill in all details / দয়া করে সব কটি ঘর পূরণ করুন।");
                 return;
             }
             
@@ -350,7 +412,10 @@
                           "📱 Phone: " + phone + "\n" +
                           "📍 Address: " + address + "\n" +
                           "📌 Pin Code: " + pin + "\n" +
-                          "🛠️ Service: " + selectedServiceText;
+                          "🛠️ Service: " + selectedServiceText + "\n" +
+                          "📅 Date: " + date + "\n" +
+                          "⏰ Time: " + time + "\n" +
+                          "💳 Payment: " + payMethod + (payMethod.includes("UPI") ? " (UPI ID: 8481003054@idfcfirst)" : "");
             
             var encodedMessage = encodeURIComponent(message);
             window.open("https://api.whatsapp.com/send?phone=" + myPhoneNumber + "&text=" + encodedMessage, '_blank');
