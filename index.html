@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N.G COOLING SOLUTION</title>
-  <!-- PWA Manifest Link -->
-<link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0d1b2a">
 
-<!-- Service Worker Script -->
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
@@ -87,15 +85,14 @@
             background: linear-gradient(135deg, #0284c7, #0369a1);
             color: white;
             border: none;
-            padding: 10px 15px;
+            padding: 8px 12px;
             border-radius: 6px;
             cursor: pointer;
-            font-size: 0.9em;
+            font-size: 0.85em;
             font-weight: 600;
-            margin-bottom: 8px;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: background 0.2s;
         }
@@ -190,7 +187,6 @@
     </header>
 
     <div class="container">
-        <!-- Booking Card -->
         <div class="card">
             <h2>🛠️ Select Service & Book Online</h2>
             
@@ -205,11 +201,11 @@
             </div>
 
             <div class="form-group">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
                     <label for="custAddress" style="margin-bottom:0;">Full Address / আপনার সম্পূর্ণ ঠিকানা:</label>
                     <button type="button" class="btn-location" onclick="getLocation()">📍 Auto Location</button>
                 </div>
-                <textarea id="custAddress" placeholder="Click 'Auto Location' or type your full address here..." required></textarea>
+                <textarea id="custAddress" placeholder="Click 'Auto Location' or type address manually..." required></textarea>
             </div>
 
             <div class="form-group">
@@ -237,7 +233,6 @@
             <button class="btn-submit" onclick="sendNotification()">✅ Confirm Booking via WhatsApp</button>
         </div>
 
-        <!-- Customer Reviews Card -->
         <div class="card">
             <h2>💬 Customer Feedback & Reviews</h2>
             <p style="font-size:0.9em; color:#64748b; margin-top:0;">What our happy customers say about N.G Cooling Solution:</p>
@@ -303,7 +298,7 @@
             updatePrice();
         };
 
-        // Auto Location Fetcher Function using Geolocation and OpenStreetMap Nominatim API
+        // Auto Location Function
         function getLocation() {
             if (navigator.geolocation) {
                 document.getElementById("custAddress").value = "Fetching your location... Please wait...";
@@ -311,7 +306,6 @@
                     var lat = position.coords.latitude;
                     var lon = position.coords.longitude;
                     
-                    // Reverse geocoding using Nominatim API to get human readable address
                     fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
                     .then(response => response.json())
                     .then(data => {
@@ -328,7 +322,7 @@
                         document.getElementById("custAddress").value = "Lat: " + lat + ", Lon: " + lon;
                     });
                 }, function(error) {
-                    alert("Unable to retrieve your location. Please type manually. Error: " + error.message);
+                    alert("Unable to retrieve location. Please type manually. Error: " + error.message);
                     document.getElementById("custAddress").value = "";
                 }, { timeout: 10000, enableHighAccuracy: true });
             } else {
