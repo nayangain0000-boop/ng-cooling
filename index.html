@@ -1,2143 +1,1248 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f172a">
+<meta name="description" content="N.G Cooling Solution - Urban Company Style Home Appliances Service & Repair in Dum Dum & Kolkata">
+<title>N.G Cooling Solution | Doorstep Home Appliances Service & Repair</title>
 
-<meta name="theme-color" content="#075985">
-<meta name="description" content="N.G Cooling Solution - Home Appliances Service & Repair">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
 
-<title>N.G Cooling Solution | Home Appliances Service & Repair</title>
+<!-- Google Fonts: Inter & Noto Sans Bengali -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ['Inter', 'Noto Sans Bengali', 'sans-serif'],
+                },
+                colors: {
+                    brand: {
+                        dark: '#0f172a',
+                        primary: '#0284c7',
+                        teal: '#0d9488',
+                        emerald: '#10b981',
+                    }
+                }
+            }
+        }
+    }
+</script>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family:Arial,"Noto Sans Bengali",sans-serif;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#f4f7fb;
-    color:#172033;
-    line-height:1.5;
-}
-
-/* ================= HEADER ================= */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(255,255,255,.96);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid #e5e7eb;
-    box-shadow:0 4px 18px rgba(0,0,0,.07);
-}
-
-.header-inner{
-    max-width:1150px;
-    margin:auto;
-    min-height:70px;
-    padding:10px 16px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-}
-
-.logo-area{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    min-width:0;
-}
-
-.logo-icon{
-    width:46px;
-    height:46px;
-    border-radius:14px;
-    background:linear-gradient(135deg,#075985,#0284c7);
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:24px;
-    box-shadow:0 6px 15px rgba(7,89,133,.25);
-    flex-shrink:0;
-}
-
-.logo-text{
-    min-width:0;
-}
-
-.logo-text h1{
-    font-size:18px;
-    color:#075985;
-    font-weight:900;
-    white-space:nowrap;
-}
-
-.logo-text p{
-    font-size:11px;
-    color:#64748b;
-    font-weight:700;
-}
-
-.version{
-    display:inline-block;
-    margin-left:5px;
-    padding:3px 7px;
-    border-radius:8px;
-    background:#e0f2fe;
-    color:#075985;
-    font-size:9px;
-    vertical-align:middle;
-}
-
-/* WhatsApp */
-
-.whatsapp-btn{
-    min-height:44px;
-    padding:11px 17px;
-    border-radius:12px;
-    background:#16a34a;
-    color:white;
-    text-decoration:none;
-    font-size:13px;
-    font-weight:800;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:7px;
-    box-shadow:0 5px 14px rgba(22,163,74,.22);
-    transition:.2s;
-    white-space:nowrap;
-}
-
-.whatsapp-btn:hover{
-    transform:translateY(-2px);
-}
-
-.whatsapp-btn:active{
-    transform:scale(.96);
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    background:
-    radial-gradient(circle at top right,rgba(56,189,248,.28),transparent 34%),
-    linear-gradient(135deg,#082f49,#075985 55%,#0369a1);
-    color:white;
-    padding:42px 16px 48px;
-    overflow:hidden;
-}
-
-.hero-inner{
-    max-width:1150px;
-    margin:auto;
-}
-
-.hero-content{
-    max-width:760px;
-}
-
-.hero-badge{
-    display:inline-flex;
-    align-items:center;
-    gap:7px;
-    background:rgba(255,255,255,.13);
-    border:1px solid rgba(255,255,255,.22);
-    padding:8px 13px;
-    border-radius:30px;
-    font-size:12px;
-    font-weight:800;
-    margin-bottom:17px;
-}
-
-.hero h2{
-    font-size:clamp(30px,6vw,52px);
-    line-height:1.08;
-    margin-bottom:14px;
-    font-weight:900;
-}
-
-.hero h2 span{
-    color:#bae6fd;
-}
-
-.hero-description{
-    max-width:680px;
-    color:#e0f2fe;
-    font-size:15px;
-    margin-bottom:25px;
-}
-
-/* Bigger options */
-
-.hero-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.primary-btn,
-.secondary-btn{
-    border:none;
-    cursor:pointer;
-    min-height:50px;
-    padding:14px 24px;
-    border-radius:14px;
-    font-weight:800;
-    font-size:15px;
-    text-decoration:none;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:9px;
-    transition:.2s;
-}
-
-.primary-btn{
-    background:#fff;
-    color:#075985;
-    box-shadow:0 5px 15px rgba(0,0,0,.12);
-}
-
-.secondary-btn{
-    background:#16a34a;
-    color:#fff;
-    box-shadow:0 5px 15px rgba(22,163,74,.28);
-}
-
-.primary-btn:hover,
-.secondary-btn:hover{
-    transform:translateY(-2px);
-}
-
-.primary-btn:active,
-.secondary-btn:active{
-    transform:scale(.96);
-}
-
-/* ================= CONTAINER ================= */
-
-.container{
-    max-width:1150px;
-    margin:auto;
-    padding:0 16px;
-}
-
-.section{
-    padding:34px 0;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-.section-title h2{
-    color:#0f172a;
-    font-size:25px;
-    font-weight:900;
-}
-
-.section-title p{
-    color:#64748b;
-    font-size:13px;
-    margin-top:4px;
-}
-
-/* ================= WARRANTY ================= */
-
-.warranty{
-    margin-top:-20px;
-    position:relative;
-    z-index:2;
-}
-
-.warranty-box{
-    max-width:850px;
-    margin:auto;
-    background:white;
-    border-radius:18px;
-    padding:18px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    border:1px solid #e2e8f0;
-    box-shadow:0 10px 30px rgba(15,23,42,.10);
-}
-
-.warranty-icon{
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    background:#dcfce7;
-    color:#15803d;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:22px;
-}
-
-.warranty-text strong{
-    display:block;
-    color:#15803d;
-    font-size:17px;
-}
-
-.warranty-text span{
-    color:#64748b;
-    font-size:12px;
-}
-
-/* ================= SEARCH ================= */
-
-.search-box{
-    max-width:600px;
-    margin:0 auto 20px;
-    position:relative;
-}
-
-.search-box input{
-    width:100%;
-    height:50px;
-    border:1px solid #dbe3ec;
-    border-radius:15px;
-    padding:0 18px;
-    outline:none;
-    font-size:14px;
-    background:white;
-    box-shadow:0 5px 16px rgba(15,23,42,.05);
-}
-
-.search-box input:focus{
-    border-color:#0284c7;
-    box-shadow:0 0 0 3px rgba(2,132,199,.10);
-}
-
-/* ================= CARDS ================= */
-
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:14px;
-}
-
-.service-card{
-    background:white;
-    border:1px solid #e2e8f0;
-    border-radius:17px;
-    padding:17px;
-    box-shadow:0 6px 18px rgba(15,23,42,.06);
-    transition:.2s;
-}
-
-.service-card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 12px 25px rgba(15,23,42,.10);
-}
-
-.service-icon{
-    width:45px;
-    height:45px;
-    border-radius:13px;
-    background:#e0f2fe;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:22px;
-    margin-bottom:11px;
-}
-
-.service-card h3{
-    font-size:15px;
-    color:#0f172a;
-    margin-bottom:8px;
-}
-
-.price{
-    color:#000;
-    font-size:18px;
-    font-weight:900;
-    margin-bottom:12px;
-}
-
-.book-btn{
-    width:100%;
-    min-height:44px;
-    border:none;
-    border-radius:11px;
-    background:#075985;
-    color:white;
-    cursor:pointer;
-    font-size:13px;
-    font-weight:800;
-    transition:.2s;
-}
-
-.book-btn:hover{
-    background:#0369a1;
-}
-
-.book-btn:active{
-    transform:scale(.97);
-}
-
-/* ================= INFO STRIP ================= */
-
-.info-strip{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-    margin-top:8px;
-}
-
-.info-box{
-    background:white;
-    border:1px solid #e2e8f0;
-    border-radius:15px;
-    padding:15px;
-    text-align:center;
-}
-
-.info-box .icon{
-    font-size:23px;
-    margin-bottom:5px;
-}
-
-.info-box strong{
-    display:block;
-    font-size:14px;
-}
-
-.info-box span{
-    display:block;
-    color:#64748b;
-    font-size:11px;
-    margin-top:2px;
-}
-
-/* ================= LOCATION ================= */
-
-.location-box{
-    background:linear-gradient(135deg,#eff6ff,#f8fafc);
-    border:1px solid #dbeafe;
-    border-radius:20px;
-    padding:22px;
-}
-
-.location-list{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:9px;
-}
-
-.location-tag{
-    background:white;
-    border:1px solid #dbeafe;
-    color:#075985;
-    border-radius:30px;
-    padding:9px 14px;
-    font-size:12px;
-    font-weight:800;
-}
-
-/* ================= WHY US ================= */
-
-.why-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:13px;
-}
-
-.why-card{
-    background:white;
-    border-radius:17px;
-    padding:20px 14px;
-    text-align:center;
-    border:1px solid #e2e8f0;
-    box-shadow:0 5px 17px rgba(15,23,42,.05);
-}
-
-.why-card .why-icon{
-    font-size:28px;
-    margin-bottom:8px;
-}
-
-.why-card h3{
-    font-size:14px;
-    margin-bottom:4px;
-}
-
-.why-card p{
-    color:#64748b;
-    font-size:11px;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    background:#082f49;
-    color:white;
-    padding:30px 16px 90px;
-    margin-top:20px;
-}
-
-.footer-inner{
-    max-width:1150px;
-    margin:auto;
-    text-align:center;
-}
-
-.footer-logo{
-    font-size:21px;
-    font-weight:900;
-}
-
-.footer-text{
-    color:#bae6fd;
-    font-size:12px;
-    margin:7px 0 15px;
-}
-
-.footer-wa{
-    display:inline-flex;
-    min-height:46px;
-    padding:12px 20px;
-    border-radius:12px;
-    background:#16a34a;
-    color:white;
-    text-decoration:none;
-    font-weight:800;
-    font-size:13px;
-}
-
-.copyright{
-    margin-top:18px;
-    color:#94a3b8;
-    font-size:10px;
-}
-
-/* ================= FLOATING WHATSAPP ================= */
-
-.floating-wa{
-    position:fixed;
-    right:16px;
-    bottom:18px;
-    width:58px;
-    height:58px;
-    border-radius:50%;
-    background:#16a34a;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    font-size:27px;
-    box-shadow:0 8px 25px rgba(22,163,74,.38);
-    z-index:1100;
-    animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-    0%,100%{
-        box-shadow:0 8px 25px rgba(22,163,74,.38);
+    html {
+        scroll-behavior: smooth;
     }
-    50%{
-        box-shadow:0 8px 30px rgba(22,163,74,.65);
+    body {
+        font-family: 'Inter', 'Noto Sans Bengali', sans-serif;
+        background-color: #f8fafc;
+        color: #0f172a;
+        -webkit-tap-highlight-color: transparent;
     }
-}
-
-/* ================= MODAL ================= */
-
-.modal{
-    position:fixed;
-    inset:0;
-    background:rgba(2,6,23,.68);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:15px;
-    z-index:2000;
-}
-
-.modal.show{
-    display:flex;
-}
-
-.modal-box{
-    width:min(600px,100%);
-    max-height:92vh;
-    overflow:auto;
-    background:white;
-    border-radius:22px;
-    padding:22px;
-    position:relative;
-    box-shadow:0 20px 60px rgba(0,0,0,.28);
-}
-
-.modal-header{
-    padding-right:35px;
-    margin-bottom:16px;
-}
-
-.modal-header h2{
-    font-size:21px;
-    color:#075985;
-}
-
-.modal-header p{
-    color:#64748b;
-    font-size:12px;
-    margin-top:3px;
-}
-
-.close-btn{
-    position:absolute;
-    right:15px;
-    top:13px;
-    width:38px;
-    height:38px;
-    border:none;
-    border-radius:50%;
-    background:#f1f5f9;
-    cursor:pointer;
-    font-size:21px;
-    color:#475569;
-}
-
-.selected-service{
-    background:#eff6ff;
-    border:1px solid #bfdbfe;
-    border-radius:13px;
-    padding:12px;
-    margin-bottom:14px;
-}
-
-.selected-service strong{
-    display:block;
-    color:#075985;
-    font-size:14px;
-}
-
-.selected-service span{
-    color:#000;
-    font-weight:900;
-    font-size:16px;
-}
-
-.form-group{
-    margin-bottom:12px;
-}
-
-.form-group label{
-    display:block;
-    margin-bottom:5px;
-    font-size:12px;
-    font-weight:800;
-    color:#334155;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select{
-    width:100%;
-    border:1px solid #dbe3ec;
-    border-radius:11px;
-    min-height:45px;
-    padding:10px 12px;
-    outline:none;
-    font-size:13px;
-    background:white;
-}
-
-.form-group textarea{
-    min-height:75px;
-    resize:vertical;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus{
-    border-color:#0284c7;
-    box-shadow:0 0 0 3px rgba(2,132,199,.08);
-}
-
-.gps-row{
-    display:flex;
-    gap:8px;
-}
-
-.gps-row input{
-    flex:1;
-}
-
-.gps-btn{
-    min-width:105px;
-    border:none;
-    border-radius:11px;
-    background:#0f766e;
-    color:white;
-    cursor:pointer;
-    font-size:12px;
-    font-weight:800;
-}
-
-.submit-btn{
-    width:100%;
-    min-height:50px;
-    border:none;
-    border-radius:13px;
-    background:#16a34a;
-    color:white;
-    cursor:pointer;
-    font-size:15px;
-    font-weight:900;
-    margin-top:5px;
-}
-
-.submit-btn:active{
-    transform:scale(.98);
-}
-
-.modal-note{
-    text-align:center;
-    color:#64748b;
-    font-size:10px;
-    margin-top:9px;
-}
-
-/* ================= TOAST ================= */
-
-.toast{
-    position:fixed;
-    left:50%;
-    bottom:90px;
-    transform:translateX(-50%) translateY(20px);
-    background:#0f172a;
-    color:white;
-    padding:11px 16px;
-    border-radius:11px;
-    font-size:12px;
-    opacity:0;
-    pointer-events:none;
-    transition:.25s;
-    z-index:3000;
-    max-width:90%;
-    text-align:center;
-}
-
-.toast.show{
-    opacity:1;
-    transform:translateX(-50%) translateY(0);
-}
-
-/* ================= HIDDEN ================= */
-
-.no-result{
-    display:none;
-    text-align:center;
-    padding:20px;
-    color:#64748b;
-    font-size:13px;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:800px){
-
-    .service-grid{
-        grid-template-columns:repeat(2,1fr);
+    /* Hide scrollbar for horizontal category pills */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
     }
-
-    .why-grid{
-        grid-template-columns:repeat(2,1fr);
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
-
-    .info-strip{
-        grid-template-columns:1fr;
+    /* Custom subtle animations */
+    @keyframes slideUp {
+        from { transform: translateY(24px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
     }
-}
-
-@media(max-width:600px){
-
-    .header-inner{
-        min-height:62px;
-        padding:8px 11px;
+    .animate-slide-up {
+        animation: slideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
-
-    .logo-icon{
-        width:40px;
-        height:40px;
-        font-size:21px;
-        border-radius:12px;
-    }
-
-    .logo-text h1{
-        font-size:15px;
-    }
-
-    .logo-text p{
-        font-size:9px;
-    }
-
-    .version{
-        font-size:8px;
-        padding:2px 5px;
-    }
-
-    .whatsapp-btn{
-        min-height:40px;
-        padding:9px 11px;
-        font-size:11px;
-    }
-
-    .hero{
-        padding:35px 14px 42px;
-    }
-
-    .hero h2{
-        font-size:31px;
-    }
-
-    .hero-description{
-        font-size:13px;
-    }
-
-    /* Bigger mobile options */
-
-    .hero-buttons{
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:12px;
-    }
-
-    .primary-btn,
-    .secondary-btn{
-        min-height:54px;
-        padding:14px 10px;
-        font-size:14px;
-        border-radius:14px;
-    }
-
-    .container{
-        padding:0 12px;
-    }
-
-    .section{
-        padding:28px 0;
-    }
-
-    .section-title h2{
-        font-size:22px;
-    }
-
-    .service-grid{
-        grid-template-columns:1fr 1fr;
-        gap:10px;
-    }
-
-    .service-card{
-        padding:13px;
-        border-radius:14px;
-    }
-
-    .service-icon{
-        width:39px;
-        height:39px;
-        font-size:19px;
-    }
-
-    .service-card h3{
-        font-size:12px;
-        line-height:1.35;
-    }
-
-    .price{
-        font-size:16px;
-    }
-
-    .book-btn{
-        min-height:42px;
-        font-size:11px;
-    }
-
-    .warranty{
-        margin-top:-17px;
-    }
-
-    .warranty-box{
-        margin:0 5px;
-        padding:14px;
-    }
-
-    .warranty-text strong{
-        font-size:15px;
-    }
-
-    .location-box{
-        padding:16px;
-    }
-
-    .location-tag{
-        padding:8px 11px;
-        font-size:10px;
-    }
-
-    .modal-box{
-        padding:17px;
-        border-radius:18px;
-    }
-
-    .gps-row{
-        flex-direction:column;
-    }
-
-    .gps-btn{
-        min-height:43px;
-    }
-
-    .floating-wa{
-        width:54px;
-        height:54px;
-        right:13px;
-        bottom:14px;
-    }
-}
-
-@media(max-width:380px){
-
-    .logo-text h1{
-        font-size:13px;
-    }
-
-    .whatsapp-btn{
-        padding:8px;
-    }
-
-    .hero h2{
-        font-size:27px;
-    }
-
-    .service-grid{
-        gap:8px;
-    }
-
-    .service-card{
-        padding:11px;
-    }
-}
 </style>
 </head>
+<body class="bg-slate-50 text-slate-900 antialiased pb-24">
 
-<body>
-
-<!-- ================= HEADER ================= -->
-
-<header>
-    <div class="header-inner">
-
-        <div class="logo-area">
-
-            <div class="logo-icon">❄️</div>
-
-            <div class="logo-text">
-                <h1>
-                    N.G Cooling Solution
-                    <span class="version">V5.1</span>
-                </h1>
-                <p>Home Appliances Service & Repair</p>
-            </div>
-
-        </div>
-
-        <a
-            class="whatsapp-btn"
-            href="https://wa.me/917439160014"
-            target="_blank"
-        >
-            💬 WhatsApp
-        </a>
-
-    </div>
-</header>
-
-
-<!-- ================= HERO ================= -->
-
-<section class="hero">
-
-    <div class="hero-inner">
-
-        <div class="hero-content">
-
-            <div class="hero-badge">
-                🛠️ Professional Service • Version 5.1
-            </div>
-
-            <h2>
-                Home Appliances
-                <span>Service & Repair</span>
-            </h2>
-
-            <p class="hero-description">
-                AC, Fridge, Washing Machine, Microwave, Geyser ও
-                Water Purifier-এর জন্য দ্রুত ও নির্ভরযোগ্য
-                Home Service & Repair।
-            </p>
-
-            <div class="hero-buttons">
-
-                <button
-                    class="primary-btn"
-                    onclick="viewServices()"
-                >
-                    🛠️ View Service
-                </button>
-
-                <a
-                    class="secondary-btn"
-                    href="https://wa.me/917439160014"
-                    target="_blank"
-                >
-                    💬 WhatsApp
+    <!-- ================= STICKY URBAN-STYLE HEADER ================= -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-3">
+            
+            <!-- Brand Logo & Location Pill -->
+            <div class="flex items-center gap-3 sm:gap-5 min-w-0">
+                <a href="#" class="flex items-center gap-2.5 shrink-0 group">
+                    <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-slate-900 text-white flex items-center justify-center text-xl shadow-md group-hover:bg-sky-600 transition-colors">
+                        ❄️
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="font-black text-base sm:text-lg tracking-tight text-slate-900 leading-none">N.G Cooling</span>
+                            <span class="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider bg-sky-50 text-sky-700 border border-sky-200 rounded-md">V7.0 UC</span>
+                        </div>
+                        <p class="text-[11px] font-medium text-slate-500 mt-0.5">Appliance Care & Repair</p>
+                    </div>
                 </a>
 
+                <!-- Location Selector Pill (Desktop/Tablet) -->
+                <a href="#coverage" class="hidden lg:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200/70 border border-slate-200/80 text-xs font-semibold text-slate-700 transition">
+                    <span class="text-rose-500">📍</span>
+                    <span>Dum Dum, Kolkata & Nearby</span>
+                    <span class="text-slate-400 text-[10px]">▼</span>
+                </a>
             </div>
 
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= WARRANTY ================= -->
-
-<section class="warranty">
-
-    <div class="warranty-box">
-
-        <div class="warranty-icon">
-            🛡️
-        </div>
-
-        <div class="warranty-text">
-            <strong>90 Days Warranty</strong>
-            <span>Selected repair / parts replacement work-এর ক্ষেত্রে প্রযোজ্য</span>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= POPULAR SERVICES ================= -->
-
-<section class="section">
-
-    <div class="container">
-
-        <div class="section-title">
-            <h2>⭐ Popular Services</h2>
-            <p>দ্রুত Booking-এর জন্য জনপ্রিয় Service</p>
-        </div>
-
-        <div class="search-box">
-            <input
-                type="text"
-                id="serviceSearch"
-                placeholder="🔍 Service Search করুন..."
-                oninput="searchServices()"
-            >
-        </div>
-
-        <div
-            class="service-grid"
-            id="popularServices"
-        >
-
-            <div class="service-card" data-service="AC General Service">
-                <div class="service-icon">❄️</div>
-                <h3>AC General Service</h3>
-                <div class="price">₹399</div>
-                <button class="book-btn" onclick="openBooking('AC General Service','399')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card" data-service="Foam-Jet AC Service">
-                <div class="service-icon">💦</div>
-                <h3>Foam-Jet AC Service</h3>
-                <div class="price">₹499</div>
-                <button class="book-btn" onclick="openBooking('Foam-Jet AC Service','499')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card" data-service="Lite AC Service">
-                <div class="service-icon">🧹</div>
-                <h3>Lite AC Service</h3>
-                <div class="price">₹399</div>
-                <button class="book-btn" onclick="openBooking('Lite AC Service','399')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card" data-service="AC Water Leakage Repair">
-                <div class="service-icon">💧</div>
-                <h3>AC Water Leakage Repair</h3>
-                <div class="price">₹499</div>
-                <button class="book-btn" onclick="openBooking('AC Water Leakage Repair','499')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card" data-service="AC Cooling Problem">
-                <div class="service-icon">🌬️</div>
-                <h3>AC Cooling Problem</h3>
-                <div class="price">₹199</div>
-                <button class="book-btn" onclick="openBooking('AC Cooling Problem','199')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card" data-service="AC No Cooling Issue">
-                <div class="service-icon">🥶</div>
-                <h3>AC No Cooling Issue</h3>
-                <div class="price">₹199</div>
-                <button class="book-btn" onclick="openBooking('AC No Cooling Issue','199')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card" data-service="Fridge Cooling Problem">
-                <div class="service-icon">🧊</div>
-                <h3>Fridge Cooling Problem</h3>
-                <div class="price">₹199</div>
-                <button class="book-btn" onclick="openBooking('Fridge Cooling Problem','199')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card" data-service="Washing Machine Not Working">
-                <div class="service-icon">🧺</div>
-                <h3>Washing Machine Not Working</h3>
-                <div class="price">₹199</div>
-                <button class="book-btn" onclick="openBooking('Washing Machine Not Working','199')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card" data-service="Microwave Door Repair">
-                <div class="service-icon">🍽️</div>
-                <h3>Microwave Door Repair</h3>
-                <div class="price">₹199</div>
-                <button class="book-btn" onclick="openBooking('Microwave Door Repair','199')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card" data-service="Microwave Heating Problem">
-                <div class="service-icon">🔥</div>
-                <h3>Microwave Heating Problem</h3>
-                <div class="price">₹199</div>
-                <button class="book-btn" onclick="openBooking('Microwave Heating Problem','199')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card" data-service="Geyser Heating Problem">
-                <div class="service-icon">🚿</div>
-                <h3>Geyser Heating Problem</h3>
-                <div class="price">₹199</div>
-                <button class="book-btn" onclick="openBooking('Geyser Heating Problem','199')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card" data-service="Water Purifier Repair Service">
-                <div class="service-icon">💧</div>
-                <h3>Water Purifier Repair & Service</h3>
-                <div class="price">₹199</div>
-                <button class="book-btn" onclick="openBooking('Water Purifier Repair & Service','199')">
-                    Book Now
-                </button>
-            </div>
-
-        </div>
-
-        <div
-            id="noResult"
-            class="no-result"
-        >
-            কোনো Service পাওয়া যায়নি।
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= INFO STRIP ================= -->
-
-<section class="section" style="padding-top:5px;">
-
-    <div class="container">
-
-        <div class="info-strip">
-
-            <div class="info-box">
-                <div class="icon">👨‍🔧</div>
-                <strong>Professional Technician</strong>
-                <span>Experienced Service Team</span>
-            </div>
-
-            <div class="info-box">
-                <div class="icon">🧾</div>
-                <strong>Service Bill</strong>
-                <span>Service-এর পর Bill প্রদান</span>
-            </div>
-
-            <div class="info-box">
-                <div class="icon">💬</div>
-                <strong>WhatsApp Booking</strong>
-                <span>সহজে Booking Confirmation</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= ALL SERVICES ================= -->
-
-<section
-    class="section"
-    id="allServicesSection"
->
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <h2>🛠️ All Services</h2>
-
-            <p>
-                Home Appliances Service & Repair
-            </p>
-
-        </div>
-
-        <div class="service-grid">
-
-            <div class="service-card">
-                <div class="service-icon">❄️</div>
-                <h3>AC Service</h3>
-                <div class="price">₹399</div>
-                <button class="book-btn" onclick="openBooking('AC Service','399')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🔧</div>
-                <h3>AC Repair</h3>
-                <div class="price">₹199</div>
-                <button class="book-btn" onclick="openBooking('AC Repair','199')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🏠</div>
-                <h3>AC Installation</h3>
-                <div class="price">₹1499</div>
-                <button class="book-btn" onclick="openBooking('AC Installation','1499')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">⛽</div>
-                <h3>AC Gas Charging</h3>
-                <div class="price">₹2499</div>
-                <button class="book-btn" onclick="openBooking('AC Gas Charging','2499')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">📦</div>
-                <h3>AC Uninstallation</h3>
-                <div class="price">₹599</div>
-                <button class="book-btn" onclick="openBooking('AC Uninstallation','599')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🧊</div>
-                <h3>Fridge Repair</h3>
-                <div class="price">₹199</div>
-                <button class="book-btn" onclick="openBooking('Fridge Repair','199')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🧺</div>
-                <h3>Washing Machine Repair</h3>
-                <div class="price">₹199</div>
-                <button class="book-btn" onclick="openBooking('Washing Machine Repair','199')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🍽️</div>
-                <h3>Microwave Repair</h3>
-                <div class="price">₹199</div>
-                <button class="book-btn" onclick="openBooking('Microwave Repair','199')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🚿</div>
-                <h3>Geyser Repair</h3>
-                <div class="price">₹199</div>
-                <button class="book-btn" onclick="openBooking('Geyser Repair','199')">
-                    Book Now
-                </button>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">💧</div>
-                <h3>Water Purifier Service</h3>
-                <div class="price">₹199</div>
-                <button class="book-btn" onclick="openBooking('Water Purifier Service','199')">
-                    Book Now
-                </button>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= SERVICE LOCATION ================= -->
-
-<section class="section">
-
-    <div class="container">
-
-        <div class="section-title">
-            <h2>📍 Service Location</h2>
-            <p>Dum Dum ও আশেপাশের এলাকায় Service</p>
-        </div>
-
-        <div class="location-box">
-
-            <div class="location-list">
-
-                <div class="location-tag">📍 Dum Dum</div>
-                <div class="location-tag">📍 Dakshineswar</div>
-                <div class="location-tag">📍 Belghoria</div>
-                <div class="location-tag">📍 Belgachia</div>
-                <div class="location-tag">📍 Shyambazar</div>
-                <div class="location-tag">📍 Lake Town</div>
-                <div class="location-tag">📍 Barasat</div>
-                <div class="location-tag">📍 New Town</div>
-                <div class="location-tag">📍 Rajarhat</div>
-                <div class="location-tag">📍 Dum Dum ও আশেপাশের এলাকা</div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= WHY CHOOSE US ================= -->
-
-<section class="section">
-
-    <div class="container">
-
-        <div class="section-title">
-            <h2>⭐ Why Choose Us</h2>
-            <p>Service-এর সময় আমাদের সুবিধাগুলি</p>
-        </div>
-
-        <div class="why-grid">
-
-            <div class="why-card">
-                <div class="why-icon">👨‍🔧</div>
-                <h3>Experienced Team</h3>
-                <p>অভিজ্ঞ Technician দ্বারা Service</p>
-            </div>
-
-            <div class="why-card">
-                <div class="why-icon">⚡</div>
-                <h3>Quick Service</h3>
-                <p>দ্রুত Booking ও Service Support</p>
-            </div>
-
-            <div class="why-card">
-                <div class="why-icon">🧾</div>
-                <h3>Bill Provided</h3>
-                <p>Service-এর পর Bill প্রদান</p>
-            </div>
-
-            <div class="why-card">
-                <div class="why-icon">🛡️</div>
-                <h3>90 Days Warranty</h3>
-                <p>Selected repair work-এর ক্ষেত্রে</p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <div class="footer-inner">
-
-        <div class="footer-logo">
-            ❄️ N.G Cooling Solution
-        </div>
-
-        <div class="footer-text">
-            Home Appliances Service & Repair • Version 5.1
-        </div>
-
-        <a
-            class="footer-wa"
-            href="https://wa.me/917439160014"
-            target="_blank"
-        >
-            💬 WhatsApp: 7439160014
-        </a>
-
-        <div class="copyright">
-            © 2026 N.G Cooling Solution. All Rights Reserved.
-        </div>
-
-    </div>
-
-</footer>
-
-
-<!-- ================= FLOATING WHATSAPP ================= -->
-
-<a
-    class="floating-wa"
-    href="https://wa.me/917439160014"
-    target="_blank"
-    aria-label="WhatsApp"
->
-    💬
-</a>
-
-
-<!-- ================= BOOKING MODAL ================= -->
-
-<div
-    class="modal"
-    id="bookingModal"
->
-
-    <div class="modal-box">
-
-        <button
-            class="close-btn"
-            onclick="closeModal()"
-            aria-label="Close"
-        >
-            ×
-        </button>
-
-        <div class="modal-header">
-
-            <h2>📋 Service Booking</h2>
-
-            <p>
-                নিচের তথ্যগুলি পূরণ করে WhatsApp-এ Booking পাঠান।
-            </p>
-
-        </div>
-
-
-        <div class="selected-service">
-
-            <strong id="selectedService">
-                Service
-            </strong>
-
-            <span id="selectedPrice">
-                ₹0
-            </span>
-
-        </div>
-
-
-        <form id="bookingForm">
-
-            <div class="form-group">
-
-                <label>
-                    Customer Name *
-                </label>
-
-                <input
-                    type="text"
-                    id="customerName"
-                    placeholder="আপনার নাম"
-                    required
+            <!-- Live Search Bar (Desktop) -->
+            <div class="hidden md:flex flex-1 max-w-md mx-2 relative">
+                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm">🔍</span>
+                <input 
+                    type="text" 
+                    id="desktopSearchInput"
+                    oninput="handleSearch(this.value)"
+                    placeholder="Search for 'AC service', 'Gas refill', 'Fridge'..." 
+                    class="w-full pl-10 pr-4 py-2.5 bg-slate-100/90 hover:bg-slate-100 focus:bg-white border border-slate-200 focus:border-slate-900 rounded-xl text-xs sm:text-sm font-medium text-slate-900 placeholder-slate-400 outline-none transition"
                 >
-
             </div>
 
+            <!-- Quick Call & WhatsApp Actions -->
+            <div class="flex items-center gap-2 shrink-0">
+                <a href="tel:+917439160014" class="inline-flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold text-xs sm:text-sm border border-slate-200 transition">
+                    <span>📞</span>
+                    <span class="hidden sm:inline">7439160014</span>
+                </a>
+                <a href="https://wa.me/917439160014" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-sm transition">
+                    <span>💬</span>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
 
-            <div class="form-group">
-
-                <label>
-                    Mobile Number *
-                </label>
-
-                <input
-                    type="tel"
-                    id="customerMobile"
-                    placeholder="10 Digit Mobile Number"
-                    maxlength="10"
-                    inputmode="numeric"
-                    required
+        <!-- Mobile Search & Location Sub-bar -->
+        <div class="md:hidden px-4 pb-3 pt-1 bg-white border-t border-slate-100 space-y-2">
+            <div class="flex items-center justify-between text-[11px] font-semibold text-slate-600">
+                <a href="#coverage" class="flex items-center gap-1 truncate">
+                    <span class="text-rose-500">📍</span> Dum Dum, Kolkata & Nearby
+                </a>
+                <span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md font-bold">⚡ 60 Min Express</span>
+            </div>
+            <div class="relative">
+                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs">🔍</span>
+                <input 
+                    type="text" 
+                    id="mobileSearchInput"
+                    oninput="handleSearch(this.value)"
+                    placeholder="Search AC service, Fridge, Gas refill..." 
+                    class="w-full pl-9 pr-4 py-2 bg-slate-100 focus:bg-white border border-slate-200 focus:border-slate-900 rounded-xl text-xs font-medium text-slate-900 outline-none transition"
                 >
-
             </div>
+        </div>
+    </header>
 
+    <!-- ================= URBAN COMPANY STYLE SPLIT HERO ================= -->
+    <section class="bg-white border-b border-slate-200/80 pt-6 pb-10 sm:py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                
+                <!-- Left Column: Headline + Category Selector Box -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold mb-3">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            Trusted Doorstep Technicians in North Kolkata
+                        </div>
+                        <h1 class="text-3xl sm:text-4xl lg:text-[42px] font-black text-slate-900 tracking-tight leading-[1.15]">
+                            Home Appliances Service & Repair at your doorstep
+                        </h1>
+                        <p class="text-sm sm:text-base text-slate-600 font-medium mt-2.5">
+                            এসি, ফ্রিজ, ওয়াশিং মেশিন, মাইক্রোওয়েভ ও গিজারের দ্রুত এবং নির্ভরযোগ্য হোম সার্ভিস।
+                        </p>
+                    </div>
 
-            <div class="form-group">
+                    <!-- Urban Company Style Category Selector Card -->
+                    <div class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm">
+                        <div class="flex items-center justify-between mb-3.5">
+                            <span class="text-xs sm:text-sm font-bold text-slate-800">What are you looking for? / কী সার্ভিস প্রয়োজন?</span>
+                            <span class="text-[11px] font-semibold text-sky-700">Tap to browse</span>
+                        </div>
 
-                <label>
-                    Service Address *
-                </label>
+                        <div class="grid grid-cols-3 gap-2.5 sm:gap-3">
+                            <!-- Cat 1: AC -->
+                            <button onclick="selectCategoryAndScroll('AC')" class="flex flex-col items-center justify-center p-3 rounded-xl bg-slate-50 hover:bg-sky-50 border border-slate-200/70 hover:border-sky-300 transition group text-center">
+                                <div class="w-11 h-11 rounded-xl bg-white shadow-xs flex items-center justify-center text-2xl mb-2 group-hover:scale-110 transition-transform">❄️</div>
+                                <span class="text-xs font-bold text-slate-900 leading-tight">AC Service & Repair</span>
+                            </button>
 
-                <textarea
-                    id="serviceAddress"
-                    placeholder="সম্পূর্ণ Service Address লিখুন"
-                    required
-                ></textarea>
+                            <!-- Cat 2: Fridge -->
+                            <button onclick="selectCategoryAndScroll('Fridge')" class="flex flex-col items-center justify-center p-3 rounded-xl bg-slate-50 hover:bg-sky-50 border border-slate-200/70 hover:border-sky-300 transition group text-center">
+                                <div class="w-11 h-11 rounded-xl bg-white shadow-xs flex items-center justify-center text-2xl mb-2 group-hover:scale-110 transition-transform">🧊</div>
+                                <span class="text-xs font-bold text-slate-900 leading-tight">Refrigerator (Fridge)</span>
+                            </button>
 
-            </div>
+                            <!-- Cat 3: Washing Machine -->
+                            <button onclick="selectCategoryAndScroll('Washing Machine')" class="flex flex-col items-center justify-center p-3 rounded-xl bg-slate-50 hover:bg-sky-50 border border-slate-200/70 hover:border-sky-300 transition group text-center">
+                                <div class="w-11 h-11 rounded-xl bg-white shadow-xs flex items-center justify-center text-2xl mb-2 group-hover:scale-110 transition-transform">🧺</div>
+                                <span class="text-xs font-bold text-slate-900 leading-tight">Washing Machine</span>
+                            </button>
 
+                            <!-- Cat 4: Microwave -->
+                            <button onclick="selectCategoryAndScroll('Microwave')" class="flex flex-col items-center justify-center p-3 rounded-xl bg-slate-50 hover:bg-sky-50 border border-slate-200/70 hover:border-sky-300 transition group text-center">
+                                <div class="w-11 h-11 rounded-xl bg-white shadow-xs flex items-center justify-center text-2xl mb-2 group-hover:scale-110 transition-transform">🍽️</div>
+                                <span class="text-xs font-bold text-slate-900 leading-tight">Microwave Oven</span>
+                            </button>
 
-            <div class="form-group">
+                            <!-- Cat 5: Geyser -->
+                            <button onclick="selectCategoryAndScroll('Geyser')" class="flex flex-col items-center justify-center p-3 rounded-xl bg-slate-50 hover:bg-sky-50 border border-slate-200/70 hover:border-sky-300 transition group text-center">
+                                <div class="w-11 h-11 rounded-xl bg-white shadow-xs flex items-center justify-center text-2xl mb-2 group-hover:scale-110 transition-transform">🚿</div>
+                                <span class="text-xs font-bold text-slate-900 leading-tight">Geyser Repair</span>
+                            </button>
 
-                <label>
-                    GPS Location
-                </label>
+                            <!-- Cat 6: Water Purifier -->
+                            <button onclick="selectCategoryAndScroll('Water Purifier')" class="flex flex-col items-center justify-center p-3 rounded-xl bg-slate-50 hover:bg-sky-50 border border-slate-200/70 hover:border-sky-300 transition group text-center">
+                                <div class="w-11 h-11 rounded-xl bg-white shadow-xs flex items-center justify-center text-2xl mb-2 group-hover:scale-110 transition-transform">💧</div>
+                                <span class="text-xs font-bold text-slate-900 leading-tight">Water Purifier (RO)</span>
+                            </button>
+                        </div>
+                    </div>
 
-                <div class="gps-row">
+                    <!-- Trust Metrics Row -->
+                    <div class="grid grid-cols-3 gap-3 pt-1">
+                        <div class="flex items-center gap-2.5 bg-slate-50 border border-slate-200/80 rounded-xl p-2.5 sm:p-3">
+                            <span class="text-lg sm:text-xl">⭐</span>
+                            <div>
+                                <div class="text-xs sm:text-sm font-black text-slate-900">4.9 Rating</div>
+                                <div class="text-[10px] sm:text-[11px] text-slate-500 font-medium">1,500+ Happy Homes</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2.5 bg-emerald-50/70 border border-emerald-200/80 rounded-xl p-2.5 sm:p-3">
+                            <span class="text-lg sm:text-xl">🛡️</span>
+                            <div>
+                                <div class="text-xs sm:text-sm font-black text-emerald-900">90 Days</div>
+                                <div class="text-[10px] sm:text-[11px] text-emerald-700 font-medium">Service Warranty</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2.5 bg-sky-50/70 border border-sky-200/80 rounded-xl p-2.5 sm:p-3">
+                            <span class="text-lg sm:text-xl">⚡</span>
+                            <div>
+                                <div class="text-xs sm:text-sm font-black text-sky-900">60 Mins</div>
+                                <div class="text-[10px] sm:text-[11px] text-sky-700 font-medium">Express Visit</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                    <input
-                        type="text"
-                        id="gpsLocation"
-                        placeholder="GPS Location নেওয়া হয়নি"
-                        readonly
-                    >
+                <!-- Right Column: 2x2 Appliance Repair Photo Collage (Urban Company Signature Look) -->
+                <div class="lg:col-span-6">
+                    <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                        <!-- Photo 1: AC Foam Jet -->
+                        <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-200 shadow-sm group">
+                            <img 
+                                src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=700&q=80" 
+                                onerror="this.src='https://placehold.co/600x450/0f172a/ffffff?text=AC+Foam-Jet+Service'"
+                                alt="AC Foam-Jet Cleaning" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/75 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-3 text-white text-xs font-bold">💦 Foam-Jet AC Service</span>
+                        </div>
 
-                    <button
-                        type="button"
-                        class="gps-btn"
-                        onclick="getGPS()"
-                    >
-                        📍 GPS Location
-                    </button>
+                        <!-- Photo 2: Technician Servicing AC -->
+                        <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-200 shadow-sm group">
+                            <img 
+                                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=700&q=80" 
+                                onerror="this.src='https://placehold.co/600x450/0284c7/ffffff?text=AC+Gas+Charging'"
+                                alt="AC Technician Repair" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/75 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-3 text-white text-xs font-bold">⛽ AC Gas Refill & Repair</span>
+                        </div>
 
+                        <!-- Photo 3: Fridge Repair -->
+                        <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-200 shadow-sm group">
+                            <img 
+                                src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?auto=format&fit=crop&w=700&q=80" 
+                                onerror="this.src='https://placehold.co/600x450/0d9488/ffffff?text=Refrigerator+Repair'"
+                                alt="Refrigerator Repair" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/75 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-3 text-white text-xs font-bold">🧊 Refrigerator Repair</span>
+                        </div>
+
+                        <!-- Photo 4: Washing Machine Repair -->
+                        <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-200 shadow-sm group">
+                            <img 
+                                src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=700&q=80" 
+                                onerror="this.src='https://placehold.co/600x450/1e293b/ffffff?text=Washing+Machine+Repair'"
+                                alt="Washing Machine Repair" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/75 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-3 text-white text-xs font-bold">🧺 Washing Machine Care</span>
+                        </div>
+                    </div>
                 </div>
 
             </div>
+        </div>
+    </section>
 
+    <!-- ================= MAIN SERVICE CATALOG SECTION ================= -->
+    <main id="servicesSection" class="max-w-7xl mx-auto px-4 sm:px-6 pt-8 pb-10">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-5">
+            <div>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Service Packages & Rate Card</h2>
+                <p class="text-xs sm:text-sm text-slate-500 font-medium mt-1">
+                    স্বচ্ছ রেট চার্ট • এক বা একাধিক সার্ভিস কার্টে যোগ করে সহজেই বুক করুন
+                </p>
+            </div>
+            <div class="inline-flex items-center gap-2 text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-xl self-start sm:self-auto">
+                <span>🧾</span> Inspection fee ₹199 adjusted in final repair bill
+            </div>
+        </div>
 
-            <div class="form-group">
+        <!-- Sticky Category Filter Pills -->
+        <div class="sticky top-[116px] md:top-[80px] z-30 bg-slate-50/95 backdrop-blur-md py-3 -mx-4 px-4 sm:mx-0 sm:px-0 border-b border-slate-200/70 mb-6">
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar" id="categoryTabs">
+                <button onclick="filterByCategory('All')" data-cat="All" class="cat-pill shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-slate-900 text-white shadow-xs transition">
+                    All Services
+                </button>
+                <button onclick="filterByCategory('AC')" data-cat="AC" class="cat-pill shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition">
+                    ❄️ AC Service & Repair
+                </button>
+                <button onclick="filterByCategory('Fridge')" data-cat="Fridge" class="cat-pill shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition">
+                    🧊 Fridge
+                </button>
+                <button onclick="filterByCategory('Washing Machine')" data-cat="Washing Machine" class="cat-pill shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition">
+                    🧺 Washing Machine
+                </button>
+                <button onclick="filterByCategory('Microwave')" data-cat="Microwave" class="cat-pill shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition">
+                    🍽️ Microwave
+                </button>
+                <button onclick="filterByCategory('Geyser')" data-cat="Geyser" class="cat-pill shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition">
+                    🚿 Geyser
+                </button>
+                <button onclick="filterByCategory('Water Purifier')" data-cat="Water Purifier" class="cat-pill shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition">
+                    💧 Water Purifier
+                </button>
+            </div>
+        </div>
 
-                <label>
-                    Booking Date *
-                </label>
+        <!-- Service Cards Grid (Rendered via JS for clean state & cart sync) -->
+        <div id="serviceCardsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+            <!-- Populated dynamically -->
+        </div>
 
-                <input
-                    type="date"
-                    id="bookingDate"
-                    required
-                >
+        <!-- Empty Search State -->
+        <div id="emptyState" class="hidden text-center py-14 bg-white rounded-2xl border border-slate-200 mt-4">
+            <div class="text-4xl mb-2">🔍</div>
+            <h3 class="text-base font-bold text-slate-900">No matching service found</h3>
+            <p class="text-xs text-slate-500 mt-1 mb-4">আপনি সরাসরি WhatsApp বা কলে আমাদের সাথে যোগাযোগ করতে পারেন।</p>
+            <button onclick="resetFilters()" class="px-4 py-2 bg-slate-900 text-white text-xs font-bold rounded-xl">Show All Services</button>
+        </div>
 
+    </main>
+
+    <!-- ================= UC PROMISE & WHY CHOOSE US ================= -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+        <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-xs">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 pb-4 border-b border-slate-100">
+                <div>
+                    <span class="text-xs font-extrabold uppercase tracking-wider text-sky-700">N.G Cooling Promise</span>
+                    <h2 class="text-xl sm:text-2xl font-black text-slate-900 mt-0.5">Why Kolkata Trusts Our Technicians</h2>
+                </div>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-50 text-emerald-800 text-xs font-extrabold border border-emerald-200 self-start">
+                    🛡️ 90-Day Guarantee on Repairs
+                </span>
             </div>
 
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/70">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl mb-3">🛡️</div>
+                    <h3 class="font-bold text-sm text-slate-900">90 Days Warranty</h3>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">রিপেয়ার ও স্পেয়ার পার্টস পরিবর্তনের ওপর ৯০ দিনের ওয়ারেন্টি সুবিধা।</p>
+                </div>
 
-            <div class="form-group">
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/70">
+                    <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center text-xl mb-3">📋</div>
+                    <h3 class="font-bold text-sm text-slate-900">Transparent Rate Card</h3>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">কোনো লুকানো চার্জ নেই। কাজ শুরুর আগেই সঠিক খরচের হিসাব জানানো হয়।</p>
+                </div>
 
-                <label>
-                    Booking Time *
-                </label>
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/70">
+                    <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-3">👨‍🔧</div>
+                    <h3 class="font-bold text-sm text-slate-900">Verified Technicians</h3>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">প্রশিক্ষিত ও অভিজ্ঞ টেকনিশিয়ান দ্বারা যত্নসহকারে সার্ভিসিং।</p>
+                </div>
 
-                <select
-                    id="bookingTime"
-                    required
-                >
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/70">
+                    <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-xl mb-3">🧾</div>
+                    <h3 class="font-bold text-sm text-slate-900">Proper Service Bill</h3>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">প্রতিটি সার্ভিস বা রিপেয়ার শেষে অফিশিয়াল বিল প্রদান করা হয়।</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <option value="">
-                        Select Time
-                    </option>
-
-                    <option>8 AM - 9 AM</option>
-                    <option>9 AM - 10 AM</option>
-                    <option>10 AM - 11 AM</option>
-                    <option>11 AM - 12 PM</option>
-                    <option>12 PM - 1 PM</option>
-                    <option>1 PM - 2 PM</option>
-                    <option>2 PM - 3 PM</option>
-                    <option>3 PM - 4 PM</option>
-                    <option>4 PM - 5 PM</option>
-                    <option>5 PM - 6 PM</option>
-                    <option>6 PM - 7 PM</option>
-                    <option>7 PM - 8 PM</option>
-                    <option>8 PM - 9 PM</option>
-                    <option>9 PM - 10 PM</option>
-
-                </select>
-
+    <!-- ================= SERVICE COVERAGE AREAS ================= -->
+    <section id="coverage" class="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+        <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-md">
+            <div class="text-center max-w-2xl mx-auto mb-6">
+                <span class="text-xs font-bold uppercase tracking-widest text-sky-400">Service Locations</span>
+                <h2 class="text-xl sm:text-2xl font-black mt-1">📍 Areas We Serve in Kolkata</h2>
+                <p class="text-xs sm:text-sm text-slate-300 mt-1">দমদম ও সমগ্র উত্তর কলকাতা এবং সংলগ্ন এলাকায় দ্রুত হোম সার্ভিস উপলব্ধ</p>
             </div>
 
-
-            <div class="form-group">
-
-                <label>
-                    Problem / Details
-                </label>
-
-                <textarea
-                    id="problemDetails"
-                    placeholder="AC / Appliance-এর Problem লিখুন"
-                ></textarea>
-
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-2.5">
+                <span class="px-3.5 py-2 rounded-full bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-100">📍 Dum Dum</span>
+                <span class="px-3.5 py-2 rounded-full bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-100">📍 Nagerbazar</span>
+                <span class="px-3.5 py-2 rounded-full bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-100">📍 Dakshineswar</span>
+                <span class="px-3.5 py-2 rounded-full bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-100">📍 Belghoria</span>
+                <span class="px-3.5 py-2 rounded-full bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-100">📍 Dunlop</span>
+                <span class="px-3.5 py-2 rounded-full bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-100">📍 Baranagar</span>
+                <span class="px-3.5 py-2 rounded-full bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-100">📍 Belgachia</span>
+                <span class="px-3.5 py-2 rounded-full bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-100">📍 Shyambazar</span>
+                <span class="px-3.5 py-2 rounded-full bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-100">📍 Lake Town</span>
+                <span class="px-3.5 py-2 rounded-full bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-100">📍 Barasat</span>
+                <span class="px-3.5 py-2 rounded-full bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-100">📍 New Town</span>
+                <span class="px-3.5 py-2 rounded-full bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-100">📍 Rajarhat</span>
             </div>
+        </div>
+    </section>
 
-
-            <button
-                type="submit"
-                class="submit-btn"
-            >
-                💬 Confirm Booking on WhatsApp
-            </button>
-
-            <div class="modal-note">
-                Booking submit করলে আপনার WhatsApp-এ confirmation message তৈরি হবে।
+    <!-- ================= FOOTER ================= -->
+    <footer class="max-w-7xl mx-auto px-4 sm:px-6 pt-6 pb-12 text-center text-slate-500">
+        <div class="border-t border-slate-200 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-left">
+                <div class="font-black text-slate-900 text-base">❄️ N.G Cooling Solution</div>
+                <p class="text-xs text-slate-500 mt-0.5">37, Dum Dum Road, Kolkata - 700074 • Home Appliances Service & Repair</p>
             </div>
+            <div class="flex items-center gap-3">
+                <a href="tel:+917439160014" class="text-xs font-bold text-slate-700 hover:text-slate-900 underline">Call: +91 7439160014</a>
+                <span>•</span>
+                <a href="https://wa.me/917439160014" target="_blank" rel="noopener" class="text-xs font-bold text-emerald-700 hover:text-emerald-800 underline">WhatsApp Support</a>
+            </div>
+        </div>
+        <p class="text-[11px] text-slate-400 mt-6">© 2026 N.G Cooling Solution (V7.0 UC Edition). All Rights Reserved.</p>
+    </footer>
 
-        </form>
+    <!-- ================= STICKY URBAN COMPANY STYLE CART BAR ================= -->
+    <div id="stickyCartBar" class="fixed bottom-0 inset-x-0 z-40 hidden">
+        <div class="max-w-3xl mx-auto px-4 pb-4">
+            <div class="bg-slate-900 text-white rounded-2xl p-3.5 sm:px-5 shadow-2xl border border-slate-700/80 flex items-center justify-between gap-3 animate-slide-up">
+                <div class="flex items-center gap-3 min-w-0">
+                    <div class="w-10 h-10 rounded-xl bg-sky-500/20 border border-sky-400/30 text-sky-300 flex items-center justify-center font-black text-sm shrink-0" id="cartCountBadge">
+                        1
+                    </div>
+                    <div class="min-w-0">
+                        <div class="text-xs text-slate-300 font-medium truncate" id="cartSummaryNames">1 Service Selected</div>
+                        <div class="text-sm sm:text-base font-black text-white" id="cartTotalDisplay">Est. ₹499</div>
+                    </div>
+                </div>
 
+                <div class="flex items-center gap-2 shrink-0">
+                    <button onclick="clearCart()" class="px-2.5 py-2 text-xs font-semibold text-slate-400 hover:text-white transition" title="Clear Cart">
+                        Clear
+                    </button>
+                    <button onclick="openBookingModal()" class="px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-black text-xs sm:text-sm shadow-md transition flex items-center gap-1.5">
+                        <span>Proceed to Book</span>
+                        <span>→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
-</div>
+    <!-- ================= URBAN COMPANY STYLE BOOKING MODAL ================= -->
+    <div id="bookingModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-xs items-end sm:items-center justify-center p-0 sm:p-4">
+        <div class="bg-white w-full sm:max-w-xl rounded-t-3xl sm:rounded-3xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden animate-slide-up">
+            
+            <!-- Modal Header -->
+            <div class="px-5 py-4 border-b border-slate-200 flex items-center justify-between bg-white sticky top-0 z-10">
+                <div>
+                    <h2 class="text-lg font-black text-slate-900">Complete Your Booking</h2>
+                    <p class="text-xs text-slate-500">তথ্য পূরণ করে WhatsApp-এ বুকিং কনফার্ম করুন</p>
+                </div>
+                <button onclick="closeBookingModal()" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center text-lg font-bold transition" aria-label="Close modal">
+                    ✕
+                </button>
+            </div>
 
+            <!-- Modal Body (Scrollable) -->
+            <div class="p-5 overflow-y-auto space-y-4">
+                
+                <!-- Selected Services Summary Box -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3.5">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Selected Services</span>
+                        <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">🛡️ 90 Days Warranty</span>
+                    </div>
+                    <div id="modalCartList" class="space-y-1.5 text-xs sm:text-sm">
+                        <!-- Dynamically injected -->
+                    </div>
+                    <div class="border-t border-slate-200 mt-2.5 pt-2.5 flex items-center justify-between font-black text-slate-900 text-sm">
+                        <span>Estimated Total</span>
+                        <span id="modalTotalPrice" class="text-sky-700 text-base">₹0</span>
+                    </div>
+                </div>
 
-<!-- ================= TOAST ================= -->
+                <!-- Booking Form -->
+                <form id="bookingForm" class="space-y-3.5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Customer Name *</label>
+                            <input type="text" id="custName" required placeholder="আপনার পুরো নাম" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-slate-900 text-sm outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">10-Digit Mobile Number *</label>
+                            <input type="tel" id="custMobile" required maxlength="10" inputmode="numeric" placeholder="e.g. 98300XXXXX" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-slate-900 text-sm outline-none">
+                        </div>
+                    </div>
 
-<div
-    class="toast"
-    id="toast"
->
-</div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Full Service Address *</label>
+                        <textarea id="custAddress" required rows="2" placeholder="বাড়ির নম্বর, রাস্তা, ল্যান্ডমার্ক ও এলাকা (যেমন: Dum Dum, Nagerbazar)..." class="w-full px-3.5 py-2 rounded-xl border border-slate-300 focus:border-slate-900 text-sm outline-none resize-none"></textarea>
+                    </div>
 
+                    <!-- Auto-Detect GPS Location -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Pin Location (দ্রুত পৌঁছানোর জন্য)</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="gpsDisplay" readonly placeholder="Click button to detect GPS location" class="flex-1 px-3 py-2 rounded-xl bg-slate-100 border border-slate-200 text-xs text-slate-600 outline-none">
+                            <button type="button" onclick="detectGPS()" id="gpsBtn" class="px-3.5 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs shrink-0 transition flex items-center gap-1">
+                                <span>📍</span>
+                                <span>Auto-Detect GPS</span>
+                            </button>
+                        </div>
+                    </div>
 
-<script>
+                    <!-- Date Picker -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Preferred Service Date *</label>
+                        <input type="date" id="serviceDate" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-slate-900 text-sm outline-none bg-white">
+                    </div>
 
-/* ================= SETTINGS ================= */
+                    <!-- Time Slot Chips (Urban Company Signature Pill Selector) -->
+                    <div>
+                        <div class="flex items-center justify-between mb-1.5">
+                            <label class="text-xs font-bold text-slate-700">Select Time Slot *</label>
+                            <span id="selectedSlotLabel" class="text-[11px] font-bold text-sky-700">Please pick a slot</span>
+                        </div>
+                        <div id="timeSlotGrid" class="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                            <!-- Time slot pills populated via JS -->
+                        </div>
+                    </div>
 
-const WHATSAPP_NUMBER = "917439160014";
+                    <!-- Optional Problem Photo Upload -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Appliance Problem Photo (Optional / ঐচ্ছিক)</label>
+                        <div class="border border-dashed border-slate-300 rounded-xl p-3 bg-slate-50 flex items-center justify-between gap-3">
+                            <label class="cursor-pointer inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-slate-300 hover:bg-slate-100 text-xs font-bold text-slate-700 shadow-2xs">
+                                <span>📸 Choose Photo</span>
+                                <input type="file" id="problemPhotoInput" accept="image/*" class="hidden" onchange="handlePhotoPreview(event)">
+                            </label>
+                            <span id="photoFileName" class="text-[11px] text-slate-500 truncate flex-1">No file chosen</span>
+                            <img id="photoThumb" src="" alt="Preview" class="hidden w-12 h-12 rounded-lg object-cover border border-slate-300">
+                        </div>
+                    </div>
 
-let selectedServiceName = "";
-let selectedServicePrice = "";
+                    <!-- Additional Problem Notes -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Problem Notes (সমস্যার বিবরণ)</label>
+                        <textarea id="problemNotes" rows="2" placeholder="যেমন: AC ঠান্ডা হচ্ছে না, জল পড়ছে, বা ফ্রিজ চলছে না..." class="w-full px-3.5 py-2 rounded-xl border border-slate-300 focus:border-slate-900 text-sm outline-none resize-none"></textarea>
+                    </div>
 
+                    <!-- Submit CTA -->
+                    <button type="submit" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm sm:text-base shadow-lg shadow-emerald-600/20 transition flex items-center justify-center gap-2">
+                        <span>💬 Confirm Booking on WhatsApp</span>
+                    </button>
+                    <p class="text-[11px] text-center text-slate-400">
+                        WhatsApp-এ মেসেজ পাঠানোর পর আমাদের টেকনিশিয়ান দ্রুত যোগাযোগ করবেন।
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
 
-/* ================= VIEW SERVICE ================= */
+    <!-- ================= CUSTOM TOAST NOTIFICATION ================= -->
+    <div id="toastBox" class="fixed top-20 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-300 transform -translate-y-2">
+        <div id="toastText" class="bg-slate-900 text-white px-4 py-2.5 rounded-xl text-xs font-bold shadow-xl border border-slate-700 flex items-center gap-2">
+        </div>
+    </div>
 
-function viewServices(){
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        const WHATSAPP_PHONE = "917439160014";
 
-    const section =
-        document.getElementById("allServicesSection");
+        // Service Catalog Data (Urban Company Style)
+        const SERVICES_DATA = [
+            {
+                id: "ac-foam-jet",
+                category: "AC",
+                title: "Foam-Jet AC Service",
+                bengaliSubtitle: "ফোম-জেট ডিপ ক্লিনিং সার্ভিস",
+                rating: "4.9",
+                reviews: "1.4k",
+                duration: "45 mins",
+                priceDisplay: "₹499",
+                minPrice: 499,
+                maxPrice: 499,
+                badge: "BESTSELLER",
+                badgeColor: "bg-emerald-50 text-emerald-700 border-emerald-200",
+                image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=500&q=80",
+                fallback: "https://placehold.co/400x300/0284c7/ffffff?text=Foam-Jet+AC",
+                bullets: [
+                    "2X deeper dust & mold removal with active foam",
+                    "High-pressure jet wash for indoor cooling coils & outdoor unit"
+                ]
+            },
+            {
+                id: "ac-general",
+                category: "AC",
+                title: "AC General / Lite Service",
+                bengaliSubtitle: "সাধারণ এসি সার্ভিসিং ও ফিল্টার ক্লিনিং",
+                rating: "4.8",
+                reviews: "980",
+                duration: "35 mins",
+                priceDisplay: "₹399",
+                minPrice: 399,
+                maxPrice: 399,
+                badge: "VALUE",
+                badgeColor: "bg-sky-50 text-sky-700 border-sky-200",
+                image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=500&q=80",
+                fallback: "https://placehold.co/400x300/0f172a/ffffff?text=AC+General",
+                bullets: [
+                    "Thorough filter, cooling coil & drain tray cleaning",
+                    "Airflow & cooling performance checkup"
+                ]
+            },
+            {
+                id: "ac-gas-refill",
+                category: "AC",
+                title: "AC Gas Charging & Refill",
+                bengaliSubtitle: "এসি গ্যাস চার্জিং (R32 / R410A / R22)",
+                rating: "4.9",
+                reviews: "820",
+                duration: "60 mins",
+                priceDisplay: "₹1,300 - ₹2,700",
+                minPrice: 1300,
+                maxPrice: 2700,
+                badge: "90 DAYS WARRANTY",
+                badgeColor: "bg-emerald-50 text-emerald-700 border-emerald-200",
+                image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=500&q=80",
+                fallback: "https://placehold.co/400x300/0d9488/ffffff?text=AC+Gas+Refill",
+                bullets: [
+                    "Partial Gas Top-up: ₹1,300–₹1,800 (minor pressure drop)",
+                    "Full Vacuum + Complete Refill: ₹2,000–₹2,700 with leak test"
+                ]
+            },
+            {
+                id: "ac-water-leak",
+                category: "AC",
+                title: "AC Water Leakage Repair",
+                bengaliSubtitle: "এসি থেকে জল পড়া সমস্যার সমাধান",
+                rating: "4.8",
+                reviews: "640",
+                duration: "40 mins",
+                priceDisplay: "₹499",
+                minPrice: 499,
+                maxPrice: 499,
+                badge: "QUICK FIX",
+                badgeColor: "bg-amber-50 text-amber-700 border-amber-200",
+                image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=500&q=80",
+                fallback: "https://placehold.co/400x300/0369a1/ffffff?text=Water+Leak+Fix",
+                bullets: [
+                    "Complete drain pipe & indoor drain tray blockage clearing",
+                    "Indoor unit leveling & overflow check"
+                ]
+            },
+            {
+                id: "ac-cooling-checkup",
+                category: "AC",
+                title: "AC Cooling / No Cooling Checkup",
+                bengaliSubtitle: "এসি ঠান্ডা না হওয়া বা যেকোনো রিপেয়ার চেকআপ",
+                rating: "4.9",
+                reviews: "1.1k",
+                duration: "30 mins",
+                priceDisplay: "₹199",
+                minPrice: 199,
+                maxPrice: 199,
+                badge: "FEE ADJUSTED",
+                badgeColor: "bg-purple-50 text-purple-700 border-purple-200",
+                image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=500&q=80",
+                fallback: "https://placehold.co/400x300/1e293b/ffffff?text=AC+Checkup",
+                bullets: [
+                    "Complete diagnostic of compressor, PCB, capacitor & sensors",
+                    "₹199 inspection charge adjusted in final repair bill"
+                ]
+            },
+            {
+                id: "ac-installation",
+                category: "AC",
+                title: "AC Installation",
+                bengaliSubtitle: "নতুন বা পুরানো স্প্লিট/উইন্ডো এসি ফিটিং",
+                rating: "4.9",
+                reviews: "510",
+                duration: "90 mins",
+                priceDisplay: "₹1,499",
+                minPrice: 1499,
+                maxPrice: 1499,
+                badge: "PRO SETUP",
+                badgeColor: "bg-sky-50 text-sky-700 border-sky-200",
+                image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=500&q=80",
+                fallback: "https://placehold.co/400x300/0284c7/ffffff?text=AC+Installation",
+                bullets: [
+                    "Indoor & outdoor unit mounting with proper alignment",
+                    "Pipe connection, gas pressure & cooling test"
+                ]
+            },
+            {
+                id: "ac-uninstallation",
+                category: "AC",
+                title: "AC Uninstallation",
+                bengaliSubtitle: "নিরাপদে এসি খোলা ও গ্যাস লক করা",
+                rating: "4.8",
+                reviews: "430",
+                duration: "45 mins",
+                priceDisplay: "₹599",
+                minPrice: 599,
+                maxPrice: 599,
+                badge: "SAFE REMOVAL",
+                badgeColor: "bg-slate-100 text-slate-700 border-slate-200",
+                image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=500&q=80",
+                fallback: "https://placehold.co/400x300/475569/ffffff?text=AC+Uninstall",
+                bullets: [
+                    "Safe refrigerant pump-down (gas lock) before dismantling",
+                    "Careful removal of indoor/outdoor units & copper pipes"
+                ]
+            },
+            {
+                id: "fridge-repair",
+                category: "Fridge",
+                title: "Fridge Cooling Problem / Repair",
+                bengaliSubtitle: "সিঙ্গেল ও ডাবল ডোর ফ্রিজ রিপেয়ার",
+                rating: "4.9",
+                reviews: "920",
+                duration: "45 mins",
+                priceDisplay: "₹199",
+                minPrice: 199,
+                maxPrice: 199,
+                badge: "ALL BRANDS",
+                badgeColor: "bg-emerald-50 text-emerald-700 border-emerald-200",
+                image: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?auto=format&fit=crop&w=500&q=80",
+                fallback: "https://placehold.co/400x300/0d9488/ffffff?text=Fridge+Repair",
+                bullets: [
+                    "Single/Double door, Inverter & Non-Inverter diagnosis",
+                    "Fixes cooling loss, compressor relay, thermostat & gas issues"
+                ]
+            },
+            {
+                id: "washing-machine",
+                category: "Washing Machine",
+                title: "Washing Machine Repair",
+                bengaliSubtitle: "টপ লোড ও ফ্রন্ট লোড ওয়াশিং মেশিন রিপেয়ার",
+                rating: "4.8",
+                reviews: "760",
+                duration: "45 mins",
+                priceDisplay: "₹199",
+                minPrice: 199,
+                maxPrice: 199,
+                badge: "TOP & FRONT LOAD",
+                badgeColor: "bg-sky-50 text-sky-700 border-sky-200",
+                image: "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=500&q=80",
+                fallback: "https://placehold.co/400x300/1e293b/ffffff?text=Washing+Machine",
+                bullets: [
+                    "Drum not spinning, water drain failure & error code check",
+                    "Motor, drain pump, belt & PCB repair with warranty"
+                ]
+            },
+            {
+                id: "microwave-repair",
+                category: "Microwave",
+                title: "Microwave Oven Repair",
+                bengaliSubtitle: "খাবার গরম না হওয়া ও ডোর সুইচ রিপেয়ার",
+                rating: "4.9",
+                reviews: "540",
+                duration: "40 mins",
+                priceDisplay: "₹199",
+                minPrice: 199,
+                maxPrice: 199,
+                badge: "SOLO & CONVECTION",
+                badgeColor: "bg-amber-50 text-amber-700 border-amber-200",
+                image: "https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?auto=format&fit=crop&w=500&q=80",
+                fallback: "https://placehold.co/400x300/b45309/ffffff?text=Microwave+Repair",
+                bullets: [
+                    "Fixes heating issues, magnetron, capacitor & fuse faults",
+                    "Door switch, turntable motor & touch keypad repair"
+                ]
+            },
+            {
+                id: "geyser-repair",
+                category: "Geyser",
+                title: "Geyser Service & Repair",
+                bengaliSubtitle: "জল গরম না হওয়া ও থার্মোস্ট্যাট রিপেয়ার",
+                rating: "4.8",
+                reviews: "490",
+                duration: "40 mins",
+                priceDisplay: "₹199",
+                minPrice: 199,
+                maxPrice: 199,
+                badge: "ELECTRIC & INSTANT",
+                badgeColor: "bg-rose-50 text-rose-700 border-rose-200",
+                image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=500&q=80",
+                fallback: "https://placehold.co/400x300/be123c/ffffff?text=Geyser+Repair",
+                bullets: [
+                    "Heating coil element & thermostat testing/replacement",
+                    "Tank scaling clean & water leakage inspection"
+                ]
+            },
+            {
+                id: "water-purifier",
+                category: "Water Purifier",
+                title: "Water Purifier (RO/UV) Service",
+                bengaliSubtitle: "ফিল্টার পরিবর্তন ও TDS ক্যালিব্রেশন",
+                rating: "4.9",
+                reviews: "610",
+                duration: "45 mins",
+                priceDisplay: "₹199",
+                minPrice: 199,
+                maxPrice: 199,
+                badge: "PURE WATER",
+                badgeColor: "bg-cyan-50 text-cyan-700 border-cyan-200",
+                image: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=500&q=80",
+                fallback: "https://placehold.co/400x300/0891b2/ffffff?text=RO+Service",
+                bullets: [
+                    "Sediment/carbon filter check, RO membrane & pump check",
+                    "Accurate TDS level calibration & taste adjustment"
+                ]
+            }
+        ];
 
-    if(section){
+        const TIME_SLOTS = [
+            "08:00 AM", "09:00 AM", "10:00 AM", "11:00 AM",
+            "12:00 PM", "01:00 PM", "02:00 PM", "03:00 PM",
+            "04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM",
+            "08:00 PM", "09:00 PM"
+        ];
 
-        section.scrollIntoView({
-            behavior:"smooth",
-            block:"start"
+        // App State
+        let activeCategory = "All";
+        let searchQuery = "";
+        let cart = []; // Array of service objects
+        let selectedTimeSlot = "";
+        let gpsCoordinates = "";
+        let gpsMapsLink = "";
+        let photoAttached = false;
+
+        // Initialize on DOM load
+        document.addEventListener("DOMContentLoaded", () => {
+            renderServiceCards();
+            renderTimeSlots();
+            setMinDateToday();
         });
 
-    }
+        // Render Service Cards
+        function renderServiceCards() {
+            const grid = document.getElementById("serviceCardsGrid");
+            const emptyState = document.getElementById("emptyState");
 
-}
+            const filtered = SERVICES_DATA.filter(item => {
+                const matchesCategory = activeCategory === "All" || item.category === activeCategory;
+                const q = searchQuery.toLowerCase().trim();
+                const matchesSearch = !q || 
+                    item.title.toLowerCase().includes(q) || 
+                    item.category.toLowerCase().includes(q) ||
+                    item.bengaliSubtitle.toLowerCase().includes(q) ||
+                    item.bullets.some(b => b.toLowerCase().includes(q));
+                return matchesCategory && matchesSearch;
+            });
 
-
-/* ================= OPEN BOOKING ================= */
-
-function openBooking(service, price){
-
-    selectedServiceName = service;
-    selectedServicePrice = price;
-
-    document.getElementById("selectedService").textContent =
-        service;
-
-    document.getElementById("selectedPrice").textContent =
-        "₹" + price;
-
-    document.getElementById("bookingModal")
-        .classList.add("show");
-
-    document.body.style.overflow = "hidden";
-
-}
-
-
-/* ================= CLOSE MODAL ================= */
-
-function closeModal(){
-
-    document.getElementById("bookingModal")
-        .classList.remove("show");
-
-    document.body.style.overflow = "";
-
-}
-
-
-/* ================= GPS ================= */
-
-function getGPS(){
-
-    const gpsInput =
-        document.getElementById("gpsLocation");
-
-    if(!navigator.geolocation){
-
-        showToast(
-            "আপনার Browser GPS Support করে না।"
-        );
-
-        return;
-
-    }
-
-    gpsInput.value = "Location নেওয়া হচ্ছে...";
-
-    navigator.geolocation.getCurrentPosition(
-
-        function(position){
-
-            const lat =
-                position.coords.latitude;
-
-            const lng =
-                position.coords.longitude;
-
-            const mapLink =
-                "https://www.google.com/maps?q="
-                + lat + "," + lng;
-
-            gpsInput.value =
-                lat.toFixed(6)
-                + ", "
-                + lng.toFixed(6);
-
-            gpsInput.dataset.link =
-                mapLink;
-
-            showToast(
-                "📍 GPS Location নেওয়া হয়েছে"
-            );
-
-        },
-
-        function(error){
-
-            gpsInput.value = "";
-
-            let message =
-                "GPS Location নেওয়া যায়নি।";
-
-            if(error.code === 1){
-                message =
-                    "Location Permission Allow করুন।";
+            if (filtered.length === 0) {
+                grid.innerHTML = "";
+                emptyState.classList.remove("hidden");
+                return;
             }
 
-            showToast(message);
+            emptyState.classList.add("hidden");
+            grid.innerHTML = filtered.map(service => {
+                const inCart = cart.some(c => c.id === service.id);
+                return `
+                <div class="bg-white border ${inCart ? 'border-sky-500 ring-1 ring-sky-500/30' : 'border-slate-200/90'} rounded-2xl p-4 sm:p-5 shadow-2xs hover:shadow-md transition-all flex justify-between gap-4">
+                    
+                    <!-- Left Details -->
+                    <div class="flex-1 min-w-0 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center flex-wrap gap-2 mb-1.5">
+                                <span class="px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wider rounded-md border ${service.badgeColor}">
+                                    ${service.badge}
+                                </span>
+                                <span class="text-xs font-bold text-slate-700 flex items-center gap-1">
+                                    <span class="text-amber-500">★</span> ${service.rating} <span class="text-slate-400 font-normal">(${service.reviews})</span>
+                                </span>
+                            </div>
 
-        },
+                            <h3 class="text-base sm:text-lg font-extrabold text-slate-900 leading-snug">${service.title}</h3>
+                            <p class="text-[11px] font-medium text-slate-500 mb-2">${service.bengaliSubtitle}</p>
 
-        {
-            enableHighAccuracy:true,
-            timeout:10000,
-            maximumAge:0
+                            <div class="flex items-center gap-2.5 mb-3">
+                                <span class="text-base sm:text-lg font-black text-slate-900">${service.priceDisplay}</span>
+                                <span class="text-slate-300">•</span>
+                                <span class="text-xs font-semibold text-slate-500">⏱️ ${service.duration}</span>
+                            </div>
+
+                            <ul class="space-y-1 text-xs text-slate-600 border-t border-slate-100 pt-2.5">
+                                ${service.bullets.map(b => `
+                                    <li class="flex items-start gap-1.5">
+                                        <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                                        <span>${b}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Right Thumbnail & Add Button -->
+                    <div class="w-28 sm:w-32 shrink-0 flex flex-col items-center justify-between">
+                        <div class="w-full h-24 sm:h-28 rounded-xl overflow-hidden bg-slate-100 border border-slate-200/70 relative">
+                            <img 
+                                src="${service.image}" 
+                                onerror="this.src='${service.fallback}'"
+                                alt="${service.title}" 
+                                class="w-full h-full object-cover"
+                            >
+                        </div>
+
+                        <div class="w-full -mt-4 z-10 px-1.5">
+                            ${inCart ? `
+                                <button onclick="toggleCartItem('${service.id}')" class="w-full py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs shadow-md transition flex items-center justify-center gap-1">
+                                    <span>✓ Added</span>
+                                </button>
+                            ` : `
+                                <button onclick="toggleCartItem('${service.id}')" class="w-full py-2 rounded-xl bg-white hover:bg-sky-50 text-sky-700 border border-sky-300 font-extrabold text-xs shadow-sm transition">
+                                    + Add
+                                </button>
+                            `}
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join('');
         }
 
-    );
+        // Category Filter Handlers
+        function filterByCategory(cat) {
+            activeCategory = cat;
+            document.querySelectorAll(".cat-pill").forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.className = "cat-pill shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-slate-900 text-white shadow-xs transition";
+                } else {
+                    btn.className = "cat-pill shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition";
+                }
+            });
+            renderServiceCards();
+        }
 
-}
+        function selectCategoryAndScroll(cat) {
+            filterByCategory(cat);
+            const section = document.getElementById("servicesSection");
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }
 
+        // Live Search Handler
+        function handleSearch(val) {
+            searchQuery = val;
+            const desk = document.getElementById("desktopSearchInput");
+            const mob = document.getElementById("mobileSearchInput");
+            if (desk && desk.value !== val) desk.value = val;
+            if (mob && mob.value !== val) mob.value = val;
+            renderServiceCards();
+        }
 
-/* ================= BOOKING SUBMIT ================= */
+        function resetFilters() {
+            activeCategory = "All";
+            searchQuery = "";
+            document.getElementById("desktopSearchInput").value = "";
+            document.getElementById("mobileSearchInput").value = "";
+            filterByCategory("All");
+        }
 
-document.getElementById("bookingForm")
-.addEventListener("submit", function(event){
+        // Cart Management
+        function toggleCartItem(serviceId) {
+            const existingIndex = cart.findIndex(item => item.id === serviceId);
+            const serviceObj = SERVICES_DATA.find(s => s.id === serviceId);
 
-    event.preventDefault();
+            if (existingIndex > -1) {
+                cart.splice(existingIndex, 1);
+                showToast(`Removed "${serviceObj.title}" from booking tray`);
+            } else if (serviceObj) {
+                cart.push(serviceObj);
+                showToast(`✓ Added "${serviceObj.title}" to booking tray`);
+            }
 
-    const name =
-        document.getElementById("customerName")
-        .value.trim();
+            renderServiceCards();
+            updateStickyCartBar();
+        }
 
-    const mobile =
-        document.getElementById("customerMobile")
-        .value.trim();
+        function clearCart() {
+            cart = [];
+            renderServiceCards();
+            updateStickyCartBar();
+            showToast("Booking tray cleared");
+        }
 
-    const address =
-        document.getElementById("serviceAddress")
-        .value.trim();
+        function calculateCartEstimate() {
+            let minSum = 0;
+            let maxSum = 0;
+            cart.forEach(item => {
+                minSum += item.minPrice;
+                maxSum += item.maxPrice;
+            });
+            if (minSum === maxSum) {
+                return `₹${minSum.toLocaleString('en-IN')}`;
+            }
+            return `₹${minSum.toLocaleString('en-IN')} - ₹${maxSum.toLocaleString('en-IN')}`;
+        }
 
-    const date =
-        document.getElementById("bookingDate")
-        .value;
+        function updateStickyCartBar() {
+            const bar = document.getElementById("stickyCartBar");
+            if (cart.length === 0) {
+                bar.classList.add("hidden");
+                return;
+            }
 
-    const time =
-        document.getElementById("bookingTime")
-        .value;
+            bar.classList.remove("hidden");
+            document.getElementById("cartCountBadge").textContent = cart.length;
+            const names = cart.map(c => c.title).join(", ");
+            document.getElementById("cartSummaryNames").textContent = `${cart.length} ${cart.length === 1 ? 'Service' : 'Services'}: ${names}`;
+            document.getElementById("cartTotalDisplay").textContent = `Est. ${calculateCartEstimate()}`;
+        }
 
-    const problem =
-        document.getElementById("problemDetails")
-        .value.trim();
+        // Booking Modal Controls
+        function openBookingModal() {
+            if (cart.length === 0) {
+                showToast("Please add at least one service first");
+                return;
+            }
 
-    const gpsInput =
-        document.getElementById("gpsLocation");
+            const listContainer = document.getElementById("modalCartList");
+            listContainer.innerHTML = cart.map(item => `
+                <div class="flex items-center justify-between py-1">
+                    <span class="font-semibold text-slate-800">• ${item.title}</span>
+                    <span class="font-bold text-slate-900">${item.priceDisplay}</span>
+                </div>
+            `).join('');
 
-    const gps =
-        gpsInput.value.trim();
+            document.getElementById("modalTotalPrice").textContent = calculateCartEstimate();
 
-    const gpsLink =
-        gpsInput.dataset.link || "";
+            const modal = document.getElementById("bookingModal");
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+            document.body.style.overflow = "hidden";
+        }
 
+        function closeBookingModal() {
+            const modal = document.getElementById("bookingModal");
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+            document.body.style.overflow = "";
+        }
 
-    /* Mobile Validation */
+        // Render Time Slot Pills
+        function renderTimeSlots() {
+            const grid = document.getElementById("timeSlotGrid");
+            grid.innerHTML = TIME_SLOTS.map(slot => `
+                <button 
+                    type="button" 
+                    onclick="selectTimeSlot('${slot}')" 
+                    data-slot="${slot}"
+                    class="slot-chip py-2 px-2 rounded-xl border border-slate-200 bg-white hover:border-slate-400 text-xs font-bold text-slate-700 transition text-center"
+                >
+                    ${slot}
+                </button>
+            `).join('');
+        }
 
-    if(!/^[0-9]{10}$/.test(mobile)){
+        function selectTimeSlot(slot) {
+            selectedTimeSlot = slot;
+            document.getElementById("selectedSlotLabel").textContent = `Selected: ${slot}`;
+            document.querySelectorAll(".slot-chip").forEach(btn => {
+                if (btn.dataset.slot === slot) {
+                    btn.className = "slot-chip py-2 px-2 rounded-xl border border-slate-900 bg-slate-900 text-white text-xs font-bold shadow-xs transition text-center";
+                } else {
+                    btn.className = "slot-chip py-2 px-2 rounded-xl border border-slate-200 bg-white hover:border-slate-400 text-xs font-bold text-slate-700 transition text-center";
+                }
+            });
+        }
 
-        showToast(
-            "সঠিক 10 Digit Mobile Number দিন।"
-        );
+        // GPS Auto-Detection
+        function detectGPS() {
+            const display = document.getElementById("gpsDisplay");
+            const btn = document.getElementById("gpsBtn");
 
-        return;
+            if (!navigator.geolocation) {
+                showToast("Geolocation is not supported by your browser");
+                return;
+            }
 
-    }
+            display.value = "Detecting current location...";
+            btn.disabled = true;
 
+            navigator.geolocation.getCurrentPosition(
+                (pos) => {
+                    const lat = pos.coords.latitude.toFixed(6);
+                    const lng = pos.coords.longitude.toFixed(6);
+                    gpsCoordinates = `${lat}, ${lng}`;
+                    gpsMapsLink = `https://www.google.com/maps?q=${lat},${lng}`;
+                    display.value = `📍 Location Pinned (${gpsCoordinates})`;
+                    btn.disabled = false;
+                    showToast("📍 GPS Location captured successfully!");
+                },
+                (err) => {
+                    display.value = "";
+                    btn.disabled = false;
+                    showToast(err.code === 1 ? "Please allow location permission" : "Could not detect GPS location");
+                },
+                { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+            );
+        }
 
-    /* Date Validation */
+        // Photo Upload Preview
+        function handlePhotoPreview(event) {
+            const file = event.target.files[0];
+            const thumb = document.getElementById("photoThumb");
+            const nameLabel = document.getElementById("photoFileName");
 
-    if(!date){
+            if (file) {
+                photoAttached = true;
+                nameLabel.textContent = file.name;
+                thumb.src = URL.createObjectURL(file);
+                thumb.classList.remove("hidden");
+                showToast("📸 Photo ready! Please attach it in the WhatsApp chat.");
+            } else {
+                photoAttached = false;
+                nameLabel.textContent = "No file chosen";
+                thumb.classList.add("hidden");
+            }
+        }
 
-        showToast(
-            "Booking Date নির্বাচন করুন।"
-        );
+        // Form Submission & WhatsApp Redirect
+        document.getElementById("bookingForm").addEventListener("submit", function(e) {
+            e.preventDefault();
 
-        return;
+            const name = document.getElementById("custName").value.trim();
+            const mobile = document.getElementById("custMobile").value.trim();
+            const address = document.getElementById("custAddress").value.trim();
+            const date = document.getElementById("serviceDate").value;
+            const notes = document.getElementById("problemNotes").value.trim();
 
-    }
+            if (!/^[0-9]{10}$/.test(mobile)) {
+                showToast("⚠️ Please enter a valid 10-digit mobile number");
+                return;
+            }
 
+            if (!selectedTimeSlot) {
+                showToast("⚠️ Please select a preferred time slot");
+                return;
+            }
 
-    /* Save Booking */
+            const serviceLines = cart.map((item, idx) => `${idx + 1}. ${item.title} (${item.priceDisplay})`).join("\n");
+            const estTotal = calculateCartEstimate();
 
-    const booking = {
+            // Save booking record locally
+            const bookingRecord = {
+                id: Date.now(),
+                services: cart.map(c => ({ title: c.title, price: c.priceDisplay })),
+                estimatedTotal: estTotal,
+                customerName: name,
+                mobile: mobile,
+                address: address,
+                gpsLink: gpsMapsLink || gpsCoordinates || "Not Provided",
+                date: date,
+                timeSlot: selectedTimeSlot,
+                notes: notes,
+                createdAt: new Date().toISOString()
+            };
 
-        id:Date.now(),
+            try {
+                const existing = JSON.parse(localStorage.getItem("ngcs_uc_bookings")) || [];
+                existing.push(bookingRecord);
+                localStorage.setItem("ngcs_uc_bookings", JSON.stringify(existing));
+            } catch (err) {
+                // Ignore storage quota errors
+            }
 
-        service:selectedServiceName,
+            // Construct Clean WhatsApp Message
+            const photoText = photoAttached ? "\n📸 *Problem Photo:* Will attach in chat" : "";
+            const gpsText = gpsMapsLink ? `\n🗺️ *Google Maps Pin:* ${gpsMapsLink}` : "";
 
-        price:selectedServicePrice,
+            const waMessage = 
+`❄️ *N.G COOLING SOLUTION - NEW BOOKING*
 
-        customerName:name,
+🛠️ *Selected Services:*
+${serviceLines}
 
-        mobile:mobile,
+💰 *Estimated Total:* ${estTotal}
+🛡️ *Warranty:* 90 Days Service Warranty
 
-        address:address,
-
-        gps:gps,
-
-        gpsLink:gpsLink,
-
-        date:date,
-
-        time:time,
-
-        problem:problem,
-
-        warranty:"90 Days Warranty",
-
-        version:"5.1",
-
-        createdAt:new Date().toISOString()
-
-    };
-
-
-    let bookings = [];
-
-    try{
-
-        bookings =
-            JSON.parse(
-                localStorage.getItem("ngcs_bookings")
-            ) || [];
-
-    }catch(error){
-
-        bookings = [];
-
-    }
-
-
-    bookings.push(booking);
-
-    localStorage.setItem(
-        "ngcs_bookings",
-        JSON.stringify(bookings)
-    );
-
-
-    /* WhatsApp Message */
-
-    let message =
-`🛠️ *N.G COOLING SOLUTION - SERVICE BOOKING*
-
-📌 *Service:* ${selectedServiceName}
-💰 *Starting Price:* ₹${selectedServicePrice}
-
-👤 *Customer Name:* ${name}
+👤 *Customer:* ${name}
 📱 *Mobile:* ${mobile}
+📍 *Address:* ${address}${gpsText}
 
-📍 *Service Address:*
-${address}
+📅 *Date:* ${date}
+⏰ *Time Slot:* ${selectedTimeSlot}
+📝 *Notes:* ${notes || "None"}${photoText}
 
-📅 *Booking Date:* ${date}
-⏰ *Booking Time:* ${time}
+Please confirm my doorstep appointment.`;
 
-🔧 *Problem / Details:*
-${problem || "Not Provided"}
+            const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(waMessage)}`;
 
-🛡️ *Warranty:* 90 Days Warranty
+            closeBookingModal();
+            showToast("✅ Redirecting to WhatsApp for confirmation...");
 
-📍 *GPS Location:* ${
-    gpsLink
-    ? gpsLink
-    : (gps || "Not Provided")
-}
+            setTimeout(() => {
+                window.open(waUrl, "_blank");
+            }, 500);
+        });
 
-📱 *Version:* 5.1
-
-Please confirm my service booking.`;
-
-
-    const whatsappURL =
-        "https://wa.me/"
-        + WHATSAPP_NUMBER
-        + "?text="
-        + encodeURIComponent(message);
-
-
-    closeModal();
-
-    showToast(
-        "✅ Booking তৈরি হয়েছে। WhatsApp খুলছে..."
-    );
-
-
-    setTimeout(function(){
-
-        window.open(
-            whatsappURL,
-            "_blank"
-        );
-
-    },700);
-
-
-    document.getElementById("bookingForm")
-        .reset();
-
-    gpsInput.dataset.link = "";
-
-});
-
-
-/* ================= SEARCH ================= */
-
-function searchServices(){
-
-    const input =
-        document.getElementById("serviceSearch")
-        .value
-        .toLowerCase()
-        .trim();
-
-    const cards =
-        document.querySelectorAll(
-            "#popularServices .service-card"
-        );
-
-    let visible = 0;
-
-    cards.forEach(function(card){
-
-        const service =
-            card.dataset.service
-            .toLowerCase();
-
-        if(
-            service.includes(input)
-        ){
-
-            card.style.display = "";
-
-            visible++;
-
-        }else{
-
-            card.style.display = "none";
-
+        // Set Minimum Date to Today
+        function setMinDateToday() {
+            const dateInput = document.getElementById("serviceDate");
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, "0");
+            const dd = String(today.getDate()).padStart(2, "0");
+            const minStr = `${yyyy}-${mm}-${dd}`;
+            dateInput.min = minStr;
+            dateInput.value = minStr;
         }
 
-    });
+        // Toast Helper
+        let toastTimeout;
+        function showToast(msg) {
+            const box = document.getElementById("toastBox");
+            const text = document.getElementById("toastText");
+            text.textContent = msg;
+            box.classList.remove("opacity-0", "-translate-y-2");
+            box.classList.add("opacity-100", "translate-y-0");
 
-
-    const noResult =
-        document.getElementById("noResult");
-
-    if(visible === 0){
-
-        noResult.style.display = "block";
-
-    }else{
-
-        noResult.style.display = "none";
-
-    }
-
-}
-
-
-/* ================= TOAST ================= */
-
-let toastTimer;
-
-function showToast(message){
-
-    const toast =
-        document.getElementById("toast");
-
-    toast.textContent = message;
-
-    toast.classList.add("show");
-
-    clearTimeout(toastTimer);
-
-    toastTimer =
-        setTimeout(function(){
-
-            toast.classList.remove("show");
-
-        },3000);
-
-}
-
-
-/* ================= OUTSIDE MODAL CLICK ================= */
-
-document.getElementById("bookingModal")
-.addEventListener("click", function(event){
-
-    if(event.target === this){
-
-        closeModal();
-
-    }
-
-});
-
-
-/* ================= ESCAPE KEY ================= */
-
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        if(event.key === "Escape"){
-
-            closeModal();
-
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                box.classList.remove("opacity-100", "translate-y-0");
+                box.classList.add("opacity-0", "-translate-y-2");
+            }, 2800);
         }
 
-    }
-);
-
-
-/* ================= MIN BOOKING DATE ================= */
-
-(function(){
-
-    const dateInput =
-        document.getElementById("bookingDate");
-
-    const today =
-        new Date();
-
-    const year =
-        today.getFullYear();
-
-    const month =
-        String(today.getMonth() + 1)
-        .padStart(2,"0");
-
-    const day =
-        String(today.getDate())
-        .padStart(2,"0");
-
-    dateInput.min =
-        year + "-" + month + "-" + day;
-
-})();
-
-</script>
-
+        // Close modal on outside backdrop click or Escape key
+        document.getElementById("bookingModal").addEventListener("click", function(e) {
+            if (e.target === this) closeBookingModal();
+        });
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") closeBookingModal();
+        });
+    </script>
 </body>
 </html>
